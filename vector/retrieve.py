@@ -8,7 +8,7 @@ embedding_function = embedding_functions.SentenceTransformerEmbeddingFunction(
 )
 
 collection = client.get_collection(
-    name="medical_collection",
+    name="langchain",
     embedding_function=embedding_function
 )
 
@@ -17,5 +17,6 @@ def retrieve(query, k=3):
         query_texts=[query],
         n_results=k
     )
+    print(results["documents"][0])
 
     return results["documents"][0]
