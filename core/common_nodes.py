@@ -6,8 +6,7 @@ def prompt_node(state):
     state["prompt"] = build_prompt(
         state["query"],
         state["retrieved_docs"],
-        state["user_profile"],
-        state["chat_history"]
+        
     )
     return state
 

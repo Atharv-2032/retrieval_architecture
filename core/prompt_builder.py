@@ -1,26 +1,28 @@
-def build_prompt(query, retrieved_docs, user_profile, chat_history):
+def build_prompt(query, retrieved_docs):
 
     context = "\n".join(retrieved_docs)
-    history = "\n".join(chat_history)
+    
 
-    prompt = f"""
-You are a clinical medical assistant helping with patient analysis.
+    prompt =  f"""
+You are a medical research assistant.
 
+Use the structured knowledge below to answer.
 
-Relevant Medical Knowledge:
+Context:
 {context}
 
-Current Question:
+Question:
 {query}
 
+Answer clearly and base it only on the provided context.
+
 Instructions:
-- Consider the full conversation history
 - Detect contradictions or new information
 - Ensure recommendations are safe
 - Avoid suggesting contraindicated drugs
 - If information conflicts, explain clearly
 
-Answer like a clinical assistant.
+
 """
 
     return prompt
