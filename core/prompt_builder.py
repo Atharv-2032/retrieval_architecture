@@ -1,28 +1,31 @@
 def build_prompt(query, retrieved_docs):
 
     context = "\n".join(retrieved_docs)
-    
-
     prompt =  f"""
-You are a medical research assistant.
+    You are a medical research assistant.
 
-Use the structured knowledge below to answer.
+    The context may contain structured medical knowledge including:
+    - Diseases
+    - Symptoms
+    - Treatments
+    - Drugs
+    - Supporting evidence from research papers
 
-Context:
-{context}
+    Context:
+    {context}
 
-Question:
-{query}
+    Question:
+    {query}
 
-Answer clearly and base it only on the provided context.
+    Instructions:
+    - Use only the provided context
+    - Identify relevant entities and relationships
+    - Combine information if multiple entries exist
+    - Do not use outside knowledge
+    - If no relevant information is found, say so clearly
 
-Instructions:
-- Detect contradictions or new information
-- Ensure recommendations are safe
-- Avoid suggesting contraindicated drugs
-- If information conflicts, explain clearly
-
-
-"""
-
+    Answer:
+    """
     return prompt
+
+           

@@ -18,4 +18,6 @@ def  hybrid_retrieve_node(state):
 
     state["retrieved_docs"] = combined_docs
 
+    print(combined_docs)
+
     return state

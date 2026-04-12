@@ -98,7 +98,7 @@ def retrieve(query, k=5):
         LIMIT $k
         """
 
-    elif entity_type == "paper":
+    elif entity_type == "papers":
         cypher = """
                 MATCH (p:Paper)
         WHERE ANY(word IN $keywords WHERE toLower(p.title) CONTAINS word)
@@ -134,7 +134,33 @@ def retrieve(query, k=5):
     # -------------------------------
     # STEP 4: Format output
     # -------------------------------
-    docs = [r.get("result", "") for r in results]
+    docs = []
+
+    for r in results:
+        disease = r.get("disease", "")
+        symptoms = r.get("symptoms", [])
+        drugs = r.get("drugs", [])
+        treatments = r.get("treatments", [])
+        papers = r.get("papers", [])
+
+        text = ""
+
+        if disease:
+            text += f"Disease: {disease}\n"
+
+        if symptoms:
+            text += "Symptoms: " + ", ".join(symptoms[:5]) + "\n"
+
+        if drugs:
+            text += "Drugs: " + ", ".join(drugs[:5]) + "\n"
+
+        if treatments:
+            text += "Treatments: " + ", ".join(treatments[:5]) + "\n"
+
+        if papers:
+            text += "Evidence: " + ", ".join(papers[:3]) + "\n"
+
+        docs.append(text)
 
     return docs
 
