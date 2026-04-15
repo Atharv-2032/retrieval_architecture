@@ -18,6 +18,7 @@ def build_prompt(query, retrieved_docs):
     {query}
 
     Instructions:
+    - do NOT hallucinate
     - Use only the provided context
     - Identify relevant entities and relationships
     - Combine information if multiple entries exist

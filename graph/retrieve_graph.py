@@ -4,7 +4,7 @@ from graph.extract_entity import extract_entity
 client = Neo4jClient()
 
 
-def retrieve(query, k=5):
+def retrieve(query, k=2):
     # -------------------------------
     # STEP 1: Extract entity
     # -------------------------------
