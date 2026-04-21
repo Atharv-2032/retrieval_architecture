@@ -9,7 +9,7 @@ def clean_data(input_path, output_path):
 
     for item in data:
         valid = True
-        for system in ["vector","graph"]:
+        for system in ["vector","graph","hybrid"]:
             answer = item[system]["answer"]
             docs = item[system]["retrieved_docs"]
 

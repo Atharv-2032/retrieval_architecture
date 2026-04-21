@@ -35,3 +35,4 @@ if __name__ == "__main__":
         data = json.load(file)
     vector_result = run(data,"vector")
     graph_result = run(data,"graph")
+    hybrid_result = run(data,"hybrid")

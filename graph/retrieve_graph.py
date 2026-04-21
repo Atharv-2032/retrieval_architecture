@@ -1,5 +1,6 @@
 from graph.neo4j_client import Neo4jClient
 from graph.extract_entity import extract_entity
+from core.utils import normalize_entity
 
 client = Neo4jClient()
 
@@ -10,22 +11,44 @@ def retrieve(query, k=2):
     # -------------------------------
     entity, entity_type = extract_entity(query)
 
-    entity = entity.lower()
+    entity_clean = normalize_entity(entity)
     entity_type = entity_type.lower()
 
-    keywords = entity.split()
+    
 
     print(f"\n[DEBUG] Entity: {entity}, Type: {entity_type}")
-    print(f"[DEBUG] Keywords: {keywords}")
+    
+    def scoring_block(var):
+        return f"""
+        WITH {var},
+        toLower({var}.name) AS name,
+        $entity AS entity
+
+        WITH {var}, name, entity,
+        CASE 
+            WHEN name = entity THEN 5
+            WHEN name STARTS WITH entity THEN 4
+            WHEN entity STARTS WITH name THEN 4
+            WHEN name CONTAINS entity THEN 3
+            WHEN entity CONTAINS name THEN 3
+            ELSE 0
+        END AS score
+
+        WHERE score > 0
+
+        WITH {var}
+        ORDER BY score DESC
+        LIMIT $k
+        """
 
     # -------------------------------
     # STEP 2: Choose simple query
     # -------------------------------
 
     if entity_type == "disease":
-        cypher = """
-                MATCH (d:Disease)
-        WHERE ANY(word IN $keywords WHERE toLower(d.name) CONTAINS word)
+        cypher = f"""
+        MATCH (d:Disease)
+        {scoring_block("d")}
 
         OPTIONAL MATCH (d)-[:ASSOCIATED_WITH]->(s:Symptom)
         OPTIONAL MATCH (d)<-[:TREATS]-(dr:Drug)
@@ -38,13 +61,13 @@ def retrieve(query, k=2):
             collect(DISTINCT dr.name) AS drugs,
             collect(DISTINCT t.name) AS treatments,
             collect(DISTINCT p.title) AS papers
-        LIMIT $k
         """
+        
 
     elif entity_type == "symptom":
-        cypher = """
-                MATCH (s:Symptom)
-        WHERE ANY(word IN $keywords WHERE toLower(s.name) CONTAINS word)
+        cypher = f"""
+        MATCH (s:Symptom)
+        {scoring_block("s")}
 
         MATCH (d:Disease)-[:ASSOCIATED_WITH]->(s)
         OPTIONAL MATCH (d)<-[:TREATS]-(dr:Drug)
@@ -57,13 +80,12 @@ def retrieve(query, k=2):
             collect(DISTINCT dr.name) AS drugs,
             collect(DISTINCT t.name) AS treatments,
             collect(DISTINCT p.title) AS papers
-        LIMIT $k
         """
 
     elif entity_type == "drug":
-        cypher = """
-                MATCH (dr:Drug)
-        WHERE ANY(word IN $keywords WHERE toLower(dr.name) CONTAINS word)
+        cypher = f"""
+        MATCH (dr:Drug)
+        {scoring_block("dr")}
 
         MATCH (dr)-[:TREATS]->(d:Disease)
         OPTIONAL MATCH (d)-[:ASSOCIATED_WITH]->(s:Symptom)
@@ -76,13 +98,12 @@ def retrieve(query, k=2):
             collect(DISTINCT dr.name) AS drugs,
             collect(DISTINCT t.name) AS treatments,
             collect(DISTINCT p.title) AS papers
-        LIMIT $k
         """
 
     elif entity_type == "treatment":
-        cypher = """
-                MATCH (t:Treatment)
-        WHERE ANY(word IN $keywords WHERE toLower(t.name) CONTAINS word)
+        cypher = f"""
+        MATCH (t:Treatment)
+        {scoring_block("t")}
 
         MATCH (t)-[:TREATS]->(d:Disease)
         OPTIONAL MATCH (d)-[:ASSOCIATED_WITH]->(s:Symptom)
@@ -95,13 +116,30 @@ def retrieve(query, k=2):
             collect(DISTINCT dr.name) AS drugs,
             collect(DISTINCT t.name) AS treatments,
             collect(DISTINCT p.title) AS papers
-        LIMIT $k
         """
 
     elif entity_type == "papers":
-        cypher = """
-                MATCH (p:Paper)
-        WHERE ANY(word IN $keywords WHERE toLower(p.title) CONTAINS word)
+        cypher = f"""
+        MATCH (p:Paper)
+        WITH p,
+        toLower(p.title) AS name,
+        $entity AS entity
+
+        WITH p, name, entity,
+        CASE 
+            WHEN name = entity THEN 5
+            WHEN name STARTS WITH entity THEN 4
+            WHEN entity STARTS WITH name THEN 4
+            WHEN name CONTAINS entity THEN 3
+            WHEN entity CONTAINS name THEN 3
+            ELSE 0
+        END AS score
+
+        WHERE score > 0
+
+        WITH p
+        ORDER BY score DESC
+        LIMIT $k
 
         OPTIONAL MATCH (p)-[:MENTIONS]->(d:Disease)
         OPTIONAL MATCH (d)-[:ASSOCIATED_WITH]->(s:Symptom)
@@ -114,8 +152,8 @@ def retrieve(query, k=2):
             collect(DISTINCT dr.name) AS drugs,
             collect(DISTINCT t.name) AS treatments,
             collect(DISTINCT p.title) AS papers
-        LIMIT $k
         """
+
 
     else:
         print("[DEBUG] Unknown entity type")
@@ -126,7 +164,7 @@ def retrieve(query, k=2):
     # -------------------------------
     results = client.run_query(
         cypher,
-        {"keywords": keywords, "k": k}
+        {"entity": entity_clean, "k": k}
     )
 
     print(f"[DEBUG] Raw Results: {results}")

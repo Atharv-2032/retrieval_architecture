@@ -14,12 +14,16 @@ def collect_data(queries):
             graph_ans = run_graph_query(q)
             time.sleep(2)
 
+            hybrid_ans = run_hybrid_query(q)
+            time.sleep(2)
+
             
 
             results.append({
                 "query":q,
                 "vector": vector_ans,
                 "graph": graph_ans,
+                "hybrid": hybrid_ans
                 
             })
         except Exception as e:
@@ -30,7 +34,10 @@ def collect_data(queries):
 
 if __name__ == "__main__":
     queries = [
-        "explain the Role of Negative Pressure Therapy in Diabetic Foot Ulcer"
+        "explain the Role of Negative Pressure Therapy in Diabetic Foot Ulcer",
+        "Does pre-stroke frailty affect outcomes in patients undergoing reperfusion therapy for acute ischemic stroke?",
+        "Does green tea kombucha consumption, when combined with an energy-restricted diet, improve cardiometabolic risk markers in individuals with excess body weight?"
+
         
     ]
     collect_data(queries)

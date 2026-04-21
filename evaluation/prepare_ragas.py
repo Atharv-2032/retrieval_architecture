@@ -28,10 +28,10 @@ if __name__ == "__main__":
    
     vector_ds = convert_to_ragas_format(data, "vector")
     graph_ds = convert_to_ragas_format(data, "graph")
-    #hybrid_ds = convert_to_ragas_format(data, "hybrid")
+    hybrid_ds = convert_to_ragas_format(data, "hybrid")
 
     print(" Datasets ready")
 
     vector_ds.to_json("evaluation/vector_ragas.json")
     graph_ds.to_json("evaluation/graph_ragas.json")
-    #hybrid_ds.to_json("evaluation/hybrid_ragas.json")
+    hybrid_ds.to_json("evaluation/hybrid_ragas.json")

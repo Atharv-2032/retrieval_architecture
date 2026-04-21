@@ -18,3 +18,11 @@ def extract_json(text):
 
     print("[DEBUG] No valid JSON found")
     return {}
+
+
+def normalize_entity(entity):
+    text = entity.lower()
+    text = re.sub(r"\(.*?\)", "", text)       
+    text = re.sub(r"[^a-z0-9\s]", " ", text)          
+    text = re.sub(r"\s+", " ", text)          
+    return text.strip()

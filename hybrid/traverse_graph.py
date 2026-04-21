@@ -8,6 +8,9 @@ def traverse_graph(matched_nodes, paths, k=5):
     if not matched_nodes:
         print("[DEBUG] No nodes for traversal")
         return []
+    if not paths:
+        print("[DEBUG] No paths selected → skipping graph traversal")
+        return []
 
     results = []
 
@@ -22,31 +25,39 @@ def traverse_graph(matched_nodes, paths, k=5):
         # -------------------------------
         # FINAL QUERY (ALL MATCHES ALWAYS INCLUDED)
         # -------------------------------
-        cypher = """
-        MATCH (n)
-        WHERE ANY(word IN $keywords WHERE 
-            toLower(coalesce(n.name, n.title)) CONTAINS word)
+        cypher ="""
+    MATCH (n)
+    WHERE ANY(word IN $keywords WHERE 
+        toLower(coalesce(n.name, n.title)) CONTAINS word)
 
-        OPTIONAL MATCH (n)-[:ASSOCIATED_WITH]->(d:Disease)
-        OPTIONAL MATCH (d)-[:ASSOCIATED_WITH]->(s:Symptom)
+    OPTIONAL MATCH (n)-[r1]->(d:Disease)
+    WHERE type(r1) IN $paths
 
-        OPTIONAL MATCH (t:Treatment)-[:TREATS]->(d)
-        OPTIONAL MATCH (dr:Drug)-[:TREATS]->(d)
+    OPTIONAL MATCH (d)-[r2]->(s:Symptom)
+    WHERE type(r2) IN $paths
 
-        OPTIONAL MATCH (p:Paper)-[:MENTIONS]->(d)
+    OPTIONAL MATCH (dr:Drug)-[r3]->(d)
+    WHERE type(r3) IN $paths
 
-        RETURN 
-            d.name AS disease,
-            collect(DISTINCT s.name) AS symptoms,
-            collect(DISTINCT dr.name) AS drugs,
-            collect(DISTINCT t.name) AS treatments,
-            collect(DISTINCT p.title) AS papers
-        LIMIT $k
-        """
+    OPTIONAL MATCH (t:Treatment)-[r4]->(d)
+    WHERE type(r4) IN $paths
+
+    OPTIONAL MATCH (p:Paper)-[r5]->(d)
+    WHERE type(r5) IN $paths
+
+    RETURN 
+        d.name AS disease,
+        collect(DISTINCT s.name) AS symptoms,
+        collect(DISTINCT dr.name) AS drugs,
+        collect(DISTINCT t.name) AS treatments,
+        collect(DISTINCT p.title) AS papers,
+        collect(DISTINCT type(r1)) AS used_relations
+    LIMIT $k
+    """
 
         query_results = client.run_query(
             cypher,
-            {"keywords": keywords, "k": k}
+            {"keywords": keywords, "k": k,"paths":paths}
         )
 
         print(f"\n[DEBUG] Traversal Results for '{value}':", query_results)
