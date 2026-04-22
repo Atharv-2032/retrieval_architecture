@@ -1,66 +1,65 @@
 from graph.neo4j_client import Neo4jClient
+from core.utils import normalize_entity
 
 client = Neo4jClient()
 
-
-def traverse_graph(matched_nodes, paths, k=5):
-
-    if not matched_nodes:
-        print("[DEBUG] No nodes for traversal")
-        return []
-    if not paths:
-        print("[DEBUG] No paths selected → skipping graph traversal")
+def traverse_graph(matched_nodes, paths, k=2):
+    if not matched_nodes or not paths:
         return []
 
     results = []
 
-    # -------------------------------
-    # Loop through matched nodes
-    # -------------------------------
     for node in matched_nodes:
-        value = node["values"]
+        entity_clean = normalize_entity(node["values"])
 
-        keywords = value.lower().split()
+        cypher = """
+        
+                MATCH (n)
+                WHERE n.name IS NOT NULL OR n.title IS NOT NULL
 
-        # -------------------------------
-        # FINAL QUERY (ALL MATCHES ALWAYS INCLUDED)
-        # -------------------------------
-        cypher ="""
-    MATCH (n)
-    WHERE ANY(word IN $keywords WHERE 
-        toLower(coalesce(n.name, n.title)) CONTAINS word)
+                WITH n,
+                toLower(coalesce(n.name, n.title)) AS name,
+                $entity AS entity
 
-    OPTIONAL MATCH (n)-[r1]->(d:Disease)
-    WHERE type(r1) IN $paths
+                WITH n, name, entity,
+                CASE 
+                    WHEN name = entity THEN 5
+                    WHEN name STARTS WITH entity THEN 4
+                    WHEN entity STARTS WITH name THEN 4
+                    WHEN name CONTAINS entity THEN 3
+                    WHEN entity CONTAINS name THEN 3
+                    ELSE 0
+                END AS score
 
-    OPTIONAL MATCH (d)-[r2]->(s:Symptom)
-    WHERE type(r2) IN $paths
+                WHERE score > 0
 
-    OPTIONAL MATCH (dr:Drug)-[r3]->(d)
-    WHERE type(r3) IN $paths
+                WITH n
+                ORDER BY score DESC
+                LIMIT $k
 
-    OPTIONAL MATCH (t:Treatment)-[r4]->(d)
-    WHERE type(r4) IN $paths
+                OPTIONAL MATCH (n)-[r]->(x)
+                WHERE type(r) IN $paths
 
-    OPTIONAL MATCH (p:Paper)-[r5]->(d)
-    WHERE type(r5) IN $paths
+                OPTIONAL MATCH (x)-[r2]->(y)
+                WHERE type(r2) IN $paths
 
-    RETURN 
-        d.name AS disease,
-        collect(DISTINCT s.name) AS symptoms,
-        collect(DISTINCT dr.name) AS drugs,
-        collect(DISTINCT t.name) AS treatments,
-        collect(DISTINCT p.title) AS papers,
-        collect(DISTINCT type(r1)) AS used_relations
-    LIMIT $k
-    """
+                OPTIONAL MATCH (p:Paper)-[:MENTIONS]->(n)
+
+                RETURN 
+                    coalesce(n.name, n.title) AS entity,
+                    collect(DISTINCT x.name) AS related_entities,
+                    collect(DISTINCT y.name) AS second_hop,
+                    collect(DISTINCT p.title) AS papers,
+                    collect(DISTINCT type(r)) AS used_relations
+
+        """
 
         query_results = client.run_query(
             cypher,
-            {"keywords": keywords, "k": k,"paths":paths}
+            {"entity": entity_clean, "k": k, "paths": paths}
         )
 
-        print(f"\n[DEBUG] Traversal Results for '{value}':", query_results)
+        print(f"\n[DEBUG] Traversal for '{entity_clean}':", query_results)
 
         results.extend(query_results)
 

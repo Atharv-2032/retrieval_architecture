@@ -1,69 +1,59 @@
 from core.gemini_client import generate_response
 from core.utils import extract_json
 
-
 def select_traversal_paths(query, matched_nodes):
     if not matched_nodes:
-        print("[DEBUG] No matched nodes provided to path selector")
         return []
 
-    # -------------------------------
-    # Format nodes for LLM
-    # -------------------------------
     node_text = "\n".join([
         f"{n['values']} ({', '.join(n['label'])})"
         for n in matched_nodes
     ])
 
-    # -------------------------------
-    # Prompt
-    # -------------------------------
     prompt = f"""
 You are assisting in querying a medical knowledge graph.
 
 User Query:
 {query}
 
-Available entities and their types:
+Available entities:
 {node_text}
 
-The graph contains these relationships:
-- ASSOCIATED_WITH (connects diseases and symptoms)
-- TREATS (connects drugs/treatments to diseases)
-- MENTIONS (connects papers to diseases)
-
-Your task:
-Select the MOST relevant relationships to explore to answer the query.
+Graph relationships:
+- HAS_SYMPTOM
+- TREATS
+- RISK_FACTOR_FOR
+- CAUSES
+- PREVENTS
+- INTERACTS_WITH
+- AFFECTS
+- ASSOCIATED_WITH
+- MENTIONS
 
 Rules:
-- Only choose relationships relevant to the query
-- Choose at most 2–3 relationships
-- Prefer precise relationships over broad ones
-- Do NOT include irrelevant relationships
+- Prefer strong relations (HAS_SYMPTOM, TREATS, RISK_FACTOR_FOR)
+- Use CAUSES / PREVENTS / AFFECTS when relevant
+- Use ASSOCIATED_WITH only if needed
+- Max 3 paths
 
 Return JSON ONLY:
 {{
-  "paths": ["ASSOCIATED_WITH"]
+  "paths": ["HAS_SYMPTOM"]
 }}
 """
 
-    # -------------------------------
-    # Call LLM
-    # -------------------------------
     ans = generate_response(prompt)
-    print("\n[LLM PATH SELECTION RAW]:", ans)
+    print("\n[LLM PATH RAW]:", ans)
 
-    # -------------------------------
-    # Robust JSON extraction
-    # -------------------------------
     data = extract_json(ans)
-    paths = data.get("paths", [])
 
-    # -------------------------------
-    # Validate paths
-    # -------------------------------
-    valid_paths = {"ASSOCIATED_WITH", "TREATS", "MENTIONS"}
-    paths = [p for p in paths if p in valid_paths]
+    valid_paths = {
+        "HAS_SYMPTOM", "TREATS", "RISK_FACTOR_FOR",
+        "CAUSES", "PREVENTS", "INTERACTS_WITH",
+        "AFFECTS", "ASSOCIATED_WITH", "MENTIONS"
+    }
+
+    paths = [p for p in data.get("paths", []) if p in valid_paths]
 
     print("[DEBUG] Selected Paths:", paths)
 

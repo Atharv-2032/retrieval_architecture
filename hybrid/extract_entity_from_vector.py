@@ -11,6 +11,7 @@ def extract_entities_from_docs(docs):
     - symptoms
     - treatments
     - drugs
+    - risk factors
 
     Return JSON ONLY:
     {{

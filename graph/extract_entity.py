@@ -10,7 +10,7 @@ Extract the main medical entity from the query.
 Return JSON ONLY:
 {{
   "entity": "...",
-  "type": "disease | symptom | drug | treatment | paper"
+  "type": "disease | symptom | drug | treatment | paper| riskfactor"
 }}
 
 Query: {query}
