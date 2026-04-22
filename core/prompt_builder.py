@@ -1,35 +1,33 @@
-def build_prompt(query, retrieved_docs, user_profile, chat_history):
+def build_prompt(query, retrieved_docs):
 
     context = "\n".join(retrieved_docs)
-    history = "\n".join(chat_history)
+    prompt =  f"""
+    You are a medical research assistant.
 
-    prompt = f"""
-You are a clinical medical assistant helping with patient analysis.
+    The context may contain structured medical knowledge including:
+    - Diseases
+    - Symptoms
+    - Treatments
+    - Drugs
+    - Supporting evidence from research papers
 
-User Profile:
-Allergies: {user_profile.get("allergies", [])}
-Conditions: {user_profile.get("conditions", [])}
-Medical History: {user_profile.get("history", [])}
-Family Medical History: {user_profile.get("family_history", [])}
-Age: {user_profile.get("age", None)}
+    Context:
+    {context}
 
-Conversation History:
-{history}
+    Question:
+    {query}
 
-Relevant Medical Knowledge:
-{context}
+    Instructions:
+    - if there are no documents retrieved, dont give an answer - answer with no context retrieved
+    - do NOT hallucinate
+    - Use only the provided context
+    - Identify relevant entities and relationships
+    - Combine information if multiple entries exist
+    - Do not use outside knowledge
+    - If no relevant information is found, say so clearly
 
-Current Question:
-{query}
-
-Instructions:
-- Consider the full conversation history
-- Detect contradictions or new information
-- Ensure recommendations are safe
-- Avoid suggesting contraindicated drugs
-- If information conflicts, explain clearly
-
-Answer like a clinical assistant.
-"""
-
+    Answer:
+    """
     return prompt
+
+           

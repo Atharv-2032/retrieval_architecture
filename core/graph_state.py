@@ -5,5 +5,4 @@ class GraphState(TypedDict):
     retrieved_docs: List[str]
     prompt: str
     ans: str
-    chat_history: List[str]
-    user_profile: Dict
+    
