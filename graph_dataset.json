@@ -1,0 +1,29 @@
+[
+  {
+    "question": "Explain the role of Negative Pressure Wound Therapy in diabetic foot ulcer",
+    "answer": "Negative Pressure Wound Therapy (NPWT) is a treatment for Diabetic Foot Ulcer. This information is supported by the research paper \"Effects of non-pharmacological interventions on ulcer healing in patients with diabetic foot: a network meta-analysis of randomized controlled trials.\"",
+    "contexts": [
+      "Disease: Diabetic Foot Ulcer. Treatments: Negative Pressure Wound Therapy. Evidence: Effects of non-pharmacological interventions on ulcer healing in patients with diabetic foot: a network meta-analysis of randomized controlled trials."
+    ],
+    "ground_truth": "Negative Pressure Wound Therapy improves healing in diabetic foot ulcers by promoting granulation tissue formation and increasing healing rates compared to standard care."
+  },
+  {
+    "question": "How does topical capsaicin 0.075 compare to lower concentrations?",
+    "answer": "There is no information in the provided context about how topical capsaicin 0.075% compares to lower concentrations.",
+    "contexts": [
+      "Disease: neuropathic pain. Evidence: Systematic Review of Topical Capsaicin 0.075% for the Treatment of Neuropathic Pain: Efficacy, Safety, and Tolerability.",
+      "Disease: painful diabetic peripheral neuropathy. Evidence: Systematic Review of Topical Capsaicin 0.075% for the Treatment of Neuropathic Pain: Efficacy, Safety, and Tolerability.",
+      "Disease: postherpetic neuralgia. Evidence: Systematic Review of Topical Capsaicin 0.075% for the Treatment of Neuropathic Pain: Efficacy, Safety, and Tolerability."
+    ],
+    "ground_truth": "Topical capsaicin 0.075 percent is more effective than lower concentrations like 0.025 percent in reducing neuropathic pain, with manageable localized side effects."
+  },
+  {
+    "question": "What were the outcomes of low vs high dose atorvastatin in macular edema?",
+    "answer": "Based on the provided context, there is no information about the outcomes of low vs. high dose atorvastatin in macular edema. The context mentions atorvastatin in relation to diabetic macular edema and clinically significant macular edema (CSME) as part of statin therapy, but it does not differentiate between dosages or their specific outcomes.",
+    "contexts": [
+      "Disease: clinically significant macular edema. Drugs: atorvastatin, ranibizumab. Treatments: statin therapy, anti-VEGF therapy. Evidence: Assessing the Role of Statins as an Adjunctive Anti-VEGF Therapy for Clinically Significant Macular Edema (CSME) in Type 2 Diabetes Mellitus.",
+      "Disease: diabetic macular edema. Drugs: atorvastatin. Treatments: statin therapy. Evidence: Assessing the Role of Statins as an Adjunctive Anti-VEGF Therapy for Clinically Significant Macular Edema (CSME) in Type 2 Diabetes Mellitus."
+    ],
+    "ground_truth": "Low-dose atorvastatin showed better improvements in visual acuity and macular thickness compared to high-dose when used with anti-VEGF therapy."
+  }
+]
