@@ -18,6 +18,8 @@ def build_prompt(query, retrieved_docs):
     {query}
 
     Instructions:
+    - if there are no documents retrieved, dont give an answer - answer with no context retrieved
+    - do NOT hallucinate
     - Use only the provided context
     - Identify relevant entities and relationships
     - Combine information if multiple entries exist

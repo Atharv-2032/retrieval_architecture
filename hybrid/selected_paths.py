@@ -4,66 +4,80 @@ from core.utils import extract_json
 
 def select_traversal_paths(query, matched_nodes):
     if not matched_nodes:
-        print("[DEBUG] No matched nodes provided to path selector")
         return []
 
-    # -------------------------------
-    # Format nodes for LLM
-    # -------------------------------
     node_text = "\n".join([
         f"{n['values']} ({', '.join(n['label'])})"
         for n in matched_nodes
     ])
 
-    # -------------------------------
-    # Prompt
-    # -------------------------------
     prompt = f"""
 You are assisting in querying a medical knowledge graph.
 
 User Query:
 {query}
 
-Available entities and their types:
+Available entities:
 {node_text}
 
-The graph contains these relationships:
-- ASSOCIATED_WITH (connects diseases and symptoms)
-- TREATS (connects drugs/treatments to diseases)
-- MENTIONS (connects papers to diseases)
+Graph relationships:
+- HAS_SYMPTOM
+- TREATS
+- RISK_FACTOR_FOR
+- CAUSES
+- PREVENTS
+- INTERACTS_WITH
+- AFFECTS
+- ASSOCIATED_WITH
+- MENTIONS
 
-Your task:
-Select the MOST relevant relationships to explore to answer the query.
+TASK:
+Return ONLY the relevant relationship TYPES.
 
-Rules:
-- Only choose relationships relevant to the query
-- Choose at most 2–3 relationships
-- Prefer precise relationships over broad ones
-- Do NOT include irrelevant relationships
+STRICT RULES:
+- Output must be a list of STRINGS
+- Each item must be ONE of the relationships above
+- DO NOT return entities
+- DO NOT return triples
+- DO NOT return nested lists
+- DO NOT explain anything
 
-Return JSON ONLY:
+If you violate this format, the system will FAIL.
+
+Correct example:
 {{
-  "paths": ["ASSOCIATED_WITH"]
+  "paths": ["TREATS", "HAS_SYMPTOM"]
+}}
+
+Wrong example (DO NOT DO THIS):
+{{
+  "paths": [["disease", "TREATS", "drug"]]
 }}
 """
 
-    # -------------------------------
-    # Call LLM
-    # -------------------------------
     ans = generate_response(prompt)
-    print("\n[LLM PATH SELECTION RAW]:", ans)
+    print("\n[LLM PATH RAW]:", ans)
 
-    # -------------------------------
-    # Robust JSON extraction
-    # -------------------------------
     data = extract_json(ans)
+
+    valid_paths = {
+        "HAS_SYMPTOM", "TREATS", "RISK_FACTOR_FOR",
+        "CAUSES", "PREVENTS", "INTERACTS_WITH",
+        "AFFECTS", "ASSOCIATED_WITH", "MENTIONS"
+    }
+
     paths = data.get("paths", [])
 
-    # -------------------------------
-    # Validate paths
-    # -------------------------------
-    valid_paths = {"ASSOCIATED_WITH", "TREATS", "MENTIONS"}
-    paths = [p for p in paths if p in valid_paths]
+    # 🚨 STRICT VALIDATION (no silent fixing)
+    if not isinstance(paths, list):
+        raise ValueError(f"Invalid format: paths is not a list → {paths}")
+
+    for p in paths:
+        if not isinstance(p, str):
+            raise ValueError(f"Invalid path (not string): {p}")
+
+        if p not in valid_paths:
+            raise ValueError(f"Invalid path (not allowed): {p}")
 
     print("[DEBUG] Selected Paths:", paths)
 

@@ -1,33 +1,47 @@
 from core.gemini_client import generate_response
 import json
-import re
 
-
-def extract_entity(query):
+def extract_entities(query):
     prompt = f"""
-Extract the main medical entity from the query.
+Extract important medical entities from the query.
+
+Focus on:
+- diseases
+- symptoms
+- treatments
+- drugs
+- biomarkers
+- risk factors
 
 Return JSON ONLY:
 {{
-  "entity": "...",
-  "type": "disease | symptom | drug | treatment | paper"
+  "entities": [
+    {{"entity": "...", "type": "disease"}},
+    {{"entity": "...", "type": "treatment"}}
+  ]
 }}
 
 Query: {query}
 """
 
     ans = generate_response(prompt).strip()
-    print("\n[LLM RAW OUTPUT]:", ans)
+    print("\n[LLM RAW ENTITIES]:", ans)
 
-
-    # 🔥 Remove markdown
     ans = ans.replace("```json", "").replace("```", "").strip()
 
-    # 🔥 Extract JSON using regex (extra safe)
-    match = re.search(r"\{.*\}", ans, re.DOTALL)
     try:
         data = json.loads(ans)
-        return data["entity"].lower(), data["type"].lower()
+        entities = data.get("entities", [])
+
+        cleaned = []
+        for e in entities:
+            if "entity" in e and "type" in e:
+                cleaned.append({
+                    "entity": e["entity"].lower(),
+                    "type": e["type"].lower()
+                })
+
+        return cleaned[:5]
+
     except:
-        return query.lower(), "disease"
-    
+        return [{"entity": query.lower(), "type": "disease"}]

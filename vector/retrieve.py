@@ -12,7 +12,7 @@ collection = client.get_collection(
     embedding_function=embedding_function
 )
 
-def retrieve(query, k=3):
+def retrieve(query, k=5):
     results = collection.query(
         query_texts=[query],
         n_results=k

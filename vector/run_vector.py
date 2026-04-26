@@ -51,3 +51,17 @@ def run():
 
 if __name__ == "__main__":
     run()
+def run_vector_query(query):
+    state = {
+        "query": query,
+        "retrieved_docs": [],
+        "prompt": "",
+        "ans": ""
+    }
+
+    result = graph.invoke(state)
+
+    return {
+        "answer": result["ans"],
+        "retrieved_docs": result["retrieved_docs"]
+    }

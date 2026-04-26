@@ -43,5 +43,20 @@ def run():
     print("\nAssistant:\n")
     print(answer)
 
+
+def run_hybrid_query(query):
+    state = {
+        "query": query,
+        "retrieved_docs": [],
+        "prompt": "",
+        "ans": ""
+    }
+
+    result = graph.invoke(state)
+
+    return {
+        "answer": result["ans"],
+        "retrieved_docs": result["retrieved_docs"]
+    }
 if __name__ == "__main__":
     run()

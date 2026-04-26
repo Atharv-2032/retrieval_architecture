@@ -1,55 +1,67 @@
 from graph.neo4j_client import Neo4jClient
+from core.utils import normalize_entity
 
 client = Neo4jClient()
 
-
-def traverse_graph(matched_nodes, paths, k=5):
-
-    if not matched_nodes:
-        print("[DEBUG] No nodes for traversal")
+def traverse_graph(matched_nodes, paths, k=2):
+    if not matched_nodes or not paths:
         return []
 
     results = []
 
-    # -------------------------------
-    # Loop through matched nodes
-    # -------------------------------
     for node in matched_nodes:
-        value = node["values"]
+        entity_clean = normalize_entity(node["values"])
 
-        keywords = value.lower().split()
-
-        # -------------------------------
-        # FINAL QUERY (ALL MATCHES ALWAYS INCLUDED)
-        # -------------------------------
         cypher = """
-        MATCH (n)
-        WHERE ANY(word IN $keywords WHERE 
-            toLower(coalesce(n.name, n.title)) CONTAINS word)
+        
+                 MATCH (n)
+        WHERE n.name IS NOT NULL OR n.title IS NOT NULL
 
-        OPTIONAL MATCH (n)-[:ASSOCIATED_WITH]->(d:Disease)
-        OPTIONAL MATCH (d)-[:ASSOCIATED_WITH]->(s:Symptom)
+        WITH n,
+             toLower(coalesce(n.name, n.title)) AS name,
+             $entity AS entity
 
-        OPTIONAL MATCH (t:Treatment)-[:TREATS]->(d)
-        OPTIONAL MATCH (dr:Drug)-[:TREATS]->(d)
+        WITH n, name, entity,
+        CASE 
+            WHEN name = entity THEN 5
+            WHEN name STARTS WITH entity THEN 4
+            WHEN entity STARTS WITH name THEN 4
+            WHEN name CONTAINS entity THEN 3
+            WHEN entity CONTAINS name THEN 3
+            ELSE 0
+        END AS score
 
-        OPTIONAL MATCH (p:Paper)-[:MENTIONS]->(d)
+        WHERE score > 0
 
-        RETURN 
-            d.name AS disease,
-            collect(DISTINCT s.name) AS symptoms,
-            collect(DISTINCT dr.name) AS drugs,
-            collect(DISTINCT t.name) AS treatments,
-            collect(DISTINCT p.title) AS papers
+        WITH n, score
+        ORDER BY score DESC
         LIMIT $k
+
+        OPTIONAL MATCH (n)-[r]->(x)
+        WHERE type(r) IN $paths AND r.context IS NOT NULL
+
+
+        OPTIONAL MATCH (y)-[r2]->(n)
+        WHERE type(r2) IN $paths AND r2.context IS NOT NULL
+
+        WITH 
+            score,
+            collect(DISTINCT r.context) + collect(DISTINCT r2.context) AS contexts
+
+        UNWIND contexts AS context
+
+        RETURN context, score
+        ORDER BY score DESC
+        LIMIT $k
+
         """
 
         query_results = client.run_query(
             cypher,
-            {"keywords": keywords, "k": k}
+            {"entity": entity_clean, "k": k, "paths": paths}
         )
 
-        print(f"\n[DEBUG] Traversal Results for '{value}':", query_results)
+        print(f"\n[DEBUG] Traversal for '{entity_clean}':", query_results)
 
         results.extend(query_results)
 
