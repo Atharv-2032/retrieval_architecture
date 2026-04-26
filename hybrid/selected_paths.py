@@ -1,6 +1,7 @@
 from core.gemini_client import generate_response
 from core.utils import extract_json
 
+
 def select_traversal_paths(query, matched_nodes):
     if not matched_nodes:
         return []
@@ -30,15 +31,27 @@ Graph relationships:
 - ASSOCIATED_WITH
 - MENTIONS
 
-Rules:
-- Prefer strong relations (HAS_SYMPTOM, TREATS, RISK_FACTOR_FOR)
-- Use CAUSES / PREVENTS / AFFECTS when relevant
-- Use ASSOCIATED_WITH only if needed
-- Max 3 paths
+TASK:
+Return ONLY the relevant relationship TYPES.
 
-Return JSON ONLY:
+STRICT RULES:
+- Output must be a list of STRINGS
+- Each item must be ONE of the relationships above
+- DO NOT return entities
+- DO NOT return triples
+- DO NOT return nested lists
+- DO NOT explain anything
+
+If you violate this format, the system will FAIL.
+
+Correct example:
 {{
-  "paths": ["HAS_SYMPTOM"]
+  "paths": ["TREATS", "HAS_SYMPTOM"]
+}}
+
+Wrong example (DO NOT DO THIS):
+{{
+  "paths": [["disease", "TREATS", "drug"]]
 }}
 """
 
@@ -53,7 +66,18 @@ Return JSON ONLY:
         "AFFECTS", "ASSOCIATED_WITH", "MENTIONS"
     }
 
-    paths = [p for p in data.get("paths", []) if p in valid_paths]
+    paths = data.get("paths", [])
+
+    # 🚨 STRICT VALIDATION (no silent fixing)
+    if not isinstance(paths, list):
+        raise ValueError(f"Invalid format: paths is not a list → {paths}")
+
+    for p in paths:
+        if not isinstance(p, str):
+            raise ValueError(f"Invalid path (not string): {p}")
+
+        if p not in valid_paths:
+            raise ValueError(f"Invalid path (not allowed): {p}")
 
     print("[DEBUG] Selected Paths:", paths)
 

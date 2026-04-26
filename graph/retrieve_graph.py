@@ -1,279 +1,66 @@
 from graph.neo4j_client import Neo4jClient
-from graph.extract_entity import extract_entity
+from graph.extract_entity import extract_entities
+from graph.select_paths import select_traversal_paths
 from core.utils import normalize_entity
 
 client = Neo4jClient()
 
 
-def retrieve(query, k=2):
-    # -------------------------------
-    # STEP 1: Extract entity
-    # -------------------------------
-    entity, entity_type = extract_entity(query)
+def retrieve(query, k=8):
 
-    entity_clean = normalize_entity(entity)
-    entity_type = entity_type.lower()
+   
+    entities = extract_entities(query)
+    print("\n[DEBUG] Entities:", entities)
 
-    print(f"\n[DEBUG] Entity: {entity_clean}, Type: {entity_type}")
+    entity_values = [normalize_entity(e["entity"]) for e in entities]
 
-    # -------------------------------
-    # Scoring block (shared)
-    # -------------------------------
-    def scoring_block(var):
-        return f"""
-        WITH {var},
-        toLower({var}.name) AS name,
-        $entity AS entity
+    
+    paths = select_traversal_paths(query, entities)
+    print("\n[DEBUG] Paths:", paths)
 
-        WITH {var}, name, entity,
-        CASE 
-            WHEN name = entity THEN 5
-            WHEN name STARTS WITH entity THEN 4
-            WHEN entity STARTS WITH name THEN 4
-            WHEN name CONTAINS entity THEN 3
-            WHEN entity CONTAINS name THEN 3
-            ELSE 0
-        END AS score
+   
+    cypher = """
+    MATCH (a)
+    WHERE ANY(e IN $entities WHERE toLower(a.name) CONTAINS e)
 
-        WHERE score > 0
+    
+    OPTIONAL MATCH (a)-[r]->(b)
+    WHERE ANY(e IN $entities WHERE toLower(b.name) CONTAINS e)
+      AND type(r) IN $paths
+      AND r.context IS NOT NULL
 
-        WITH {var}
-        ORDER BY score DESC
-        LIMIT $k
-        """
+   
+    OPTIONAL MATCH (a)-[r2]->(x)
+    WHERE type(r2) IN $paths
+      AND r2.context IS NOT NULL
 
-    # -------------------------------
-    # STEP 2: Query selection
-    # -------------------------------
+    
+    OPTIONAL MATCH (y)-[r3]->(a)
+    WHERE type(r3) IN $paths
+      AND r3.context IS NOT NULL
 
-    if entity_type == "disease":
-        cypher = f"""
-        MATCH (d:Disease)
-        {scoring_block("d")}
+    WITH 
+        collect(DISTINCT r.context) +
+        collect(DISTINCT r2.context) +
+        collect(DISTINCT r3.context) AS contexts
 
-        // Tier 1
-        OPTIONAL MATCH (d)-[:HAS_SYMPTOM]->(s:Symptom)
-        OPTIONAL MATCH (rf:RiskFactor)-[:RISK_FACTOR_FOR]->(d)
-        OPTIONAL MATCH (dr:Drug)-[:TREATS]->(d)
-        OPTIONAL MATCH (t:Treatment)-[:TREATS]->(d)
+    UNWIND contexts AS context
 
-        // Tier 2
-        OPTIONAL MATCH (d)-[:CAUSES]->(d2:Disease)
-        OPTIONAL MATCH (t)-[:PREVENTS]->(d)
-        OPTIONAL MATCH (d)-[:AFFECTS]->(x)
+    RETURN context
+    LIMIT $k
+    """
 
-        // Collect strong signals
-        WITH d,
-             collect(DISTINCT s.name) AS symptoms,
-             collect(DISTINCT rf.name) AS risk_factors,
-             collect(DISTINCT dr.name) AS drugs,
-             collect(DISTINCT t.name) AS treatments,
-             collect(DISTINCT d2.name) AS caused_diseases,
-             collect(DISTINCT x.name) AS affected_entities
-
-        // 🔥 CONDITIONAL FALLBACK FLAG
-        WITH d, symptoms, risk_factors, drugs, treatments, caused_diseases, affected_entities,
-             (size(symptoms) = 0 AND size(risk_factors) = 0 AND size(drugs) = 0 AND size(treatments) = 0) AS need_fallback
-
-        // Tier 3 (only if needed)
-        OPTIONAL MATCH (d)-[:ASSOCIATED_WITH]->(aw)
-        WHERE need_fallback
-
-        OPTIONAL MATCH (p:Paper)-[:MENTIONS]->(d)
-
-        RETURN 
-            d.name AS disease,
-            symptoms,
-            risk_factors,
-            drugs,
-            treatments,
-            caused_diseases,
-            affected_entities,
-            collect(DISTINCT aw.name) AS associated_entities,
-            collect(DISTINCT p.title) AS papers
-        """
-
-    elif entity_type == "symptom":
-        cypher = f"""
-        MATCH (s:Symptom)
-        {scoring_block("s")}
-
-        MATCH (d:Disease)-[:HAS_SYMPTOM]->(s)
-
-        OPTIONAL MATCH (rf:RiskFactor)-[:RISK_FACTOR_FOR]->(d)
-        OPTIONAL MATCH (d)-[:CAUSES]->(d2:Disease)
-        OPTIONAL MATCH (dr:Drug)-[:TREATS]->(d)
-        OPTIONAL MATCH (d)-[:AFFECTS]->(x)
-
-        OPTIONAL MATCH (p:Paper)-[:MENTIONS]->(d)
-
-        RETURN 
-            d.name AS disease,
-            collect(DISTINCT s.name) AS symptoms,
-            collect(DISTINCT rf.name) AS risk_factors,
-            collect(DISTINCT dr.name) AS drugs,
-            collect(DISTINCT d2.name) AS caused_diseases,
-            collect(DISTINCT x.name) AS affected_entities,
-            collect(DISTINCT p.title) AS papers
-        """
-
-    elif entity_type == "drug":
-        cypher = f"""
-        MATCH (dr:Drug)
-        {scoring_block("dr")}
-
-        MATCH (dr)-[:TREATS]->(d:Disease)
-
-        OPTIONAL MATCH (dr)-[:INTERACTS_WITH]->(dr2:Drug)
-        OPTIONAL MATCH (d)-[:HAS_SYMPTOM]->(s:Symptom)
-        OPTIONAL MATCH (rf:RiskFactor)-[:RISK_FACTOR_FOR]->(d)
-        OPTIONAL MATCH (d)-[:AFFECTS]->(x)
-
-        OPTIONAL MATCH (p:Paper)-[:MENTIONS]->(d)
-
-        RETURN 
-            d.name AS disease,
-            collect(DISTINCT s.name) AS symptoms,
-            collect(DISTINCT rf.name) AS risk_factors,
-            collect(DISTINCT dr2.name) AS interactions,
-            collect(DISTINCT x.name) AS affected_entities,
-            collect(DISTINCT p.title) AS papers
-        """
-
-    elif entity_type == "treatment":
-        cypher = f"""
-        MATCH (t:Treatment)
-        {scoring_block("t")}
-
-        MATCH (t)-[:TREATS]->(d:Disease)
-
-        OPTIONAL MATCH (t)-[:PREVENTS]->(d)
-        OPTIONAL MATCH (d)-[:HAS_SYMPTOM]->(s:Symptom)
-        OPTIONAL MATCH (rf:RiskFactor)-[:RISK_FACTOR_FOR]->(d)
-        OPTIONAL MATCH (dr:Drug)-[:TREATS]->(d)
-        OPTIONAL MATCH (d)-[:AFFECTS]->(x)
-
-        OPTIONAL MATCH (p:Paper)-[:MENTIONS]->(d)
-
-        RETURN 
-            d.name AS disease,
-            collect(DISTINCT s.name) AS symptoms,
-            collect(DISTINCT rf.name) AS risk_factors,
-            collect(DISTINCT dr.name) AS drugs,
-            collect(DISTINCT t.name) AS treatments,
-            collect(DISTINCT x.name) AS affected_entities,
-            collect(DISTINCT p.title) AS papers
-        """
-
-    elif entity_type == "riskfactor":
-        cypher = f"""
-        MATCH (rf:RiskFactor)
-        {scoring_block("rf")}
-
-        MATCH (rf)-[:RISK_FACTOR_FOR]->(d:Disease)
-
-        OPTIONAL MATCH (d)-[:HAS_SYMPTOM]->(s:Symptom)
-        OPTIONAL MATCH (d)-[:CAUSES]->(d2:Disease)
-        OPTIONAL MATCH (d)-[:AFFECTS]->(x)
-
-        OPTIONAL MATCH (p:Paper)-[:MENTIONS]->(d)
-
-        RETURN 
-            d.name AS disease,
-            collect(DISTINCT s.name) AS symptoms,
-            collect(DISTINCT rf.name) AS risk_factors,
-            collect(DISTINCT d2.name) AS caused_diseases,
-            collect(DISTINCT x.name) AS affected_entities,
-            collect(DISTINCT p.title) AS papers
-        """
-
-    elif entity_type == "papers":
-        cypher = f"""
-        MATCH (p:Paper)
-        WITH p,
-        toLower(p.title) AS name,
-        $entity AS entity
-
-        WITH p, name, entity,
-        CASE 
-            WHEN name = entity THEN 5
-            WHEN name STARTS WITH entity THEN 4
-            WHEN entity STARTS WITH name THEN 4
-            WHEN name CONTAINS entity THEN 3
-            WHEN entity CONTAINS name THEN 3
-            ELSE 0
-        END AS score
-
-        WHERE score > 0
-
-        WITH p
-        ORDER BY score DESC
-        LIMIT $k
-
-        OPTIONAL MATCH (p)-[:MENTIONS]->(d:Disease)
-        OPTIONAL MATCH (d)-[:HAS_SYMPTOM]->(s:Symptom)
-        OPTIONAL MATCH (rf:RiskFactor)-[:RISK_FACTOR_FOR]->(d)
-        OPTIONAL MATCH (dr:Drug)-[:TREATS]->(d)
-        OPTIONAL MATCH (t:Treatment)-[:TREATS]->(d)
-
-        RETURN 
-            d.name AS disease,
-            collect(DISTINCT s.name) AS symptoms,
-            collect(DISTINCT rf.name) AS risk_factors,
-            collect(DISTINCT dr.name) AS drugs,
-            collect(DISTINCT t.name) AS treatments,
-            collect(DISTINCT p.title) AS papers
-        """
-
-    else:
-        print("[DEBUG] Unknown entity type")
-        return []
-
-    # -------------------------------
-    # STEP 3: Execute
-    # -------------------------------
     results = client.run_query(
         cypher,
-        {"entity": entity_clean, "k": k}
+        {
+            "entities": entity_values,
+            "paths": paths,
+            "k": k
+        }
     )
 
-    print(f"[DEBUG] Raw Results: {results}")
+    print("[DEBUG] Raw Results:", results)
 
-    # -------------------------------
-    # STEP 4: Format Output
-    # -------------------------------
-    docs = []
-
-    for r in results:
-        text = ""
-
-        if r.get("disease"):
-            text += f"Disease: {r['disease']}\n"
-
-        if r.get("symptoms"):
-            text += "Symptoms: " + ", ".join(r["symptoms"][:5]) + "\n"
-
-        if r.get("risk_factors"):
-            text += "Risk Factors: " + ", ".join(r["risk_factors"][:5]) + "\n"
-
-        if r.get("drugs"):
-            text += "Drugs: " + ", ".join(r["drugs"][:5]) + "\n"
-
-        if r.get("treatments"):
-            text += "Treatments: " + ", ".join(r["treatments"][:5]) + "\n"
-
-        if r.get("caused_diseases"):
-            text += "Causes: " + ", ".join(r["caused_diseases"][:5]) + "\n"
-
-        if r.get("affected_entities"):
-            text += "Affects: " + ", ".join(r["affected_entities"][:5]) + "\n"
-
-        if r.get("associated_entities"):
-            text += "Associated: " + ", ".join(r["associated_entities"][:5]) + "\n"
-
-        if r.get("papers"):
-            text += "Evidence: " + ", ".join(r["papers"][:3]) + "\n"
-
-        docs.append(text.strip())
+    docs = [r["context"].strip() for r in results if r.get("context")]
 
     return docs
