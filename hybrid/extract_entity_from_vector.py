@@ -1,40 +1,43 @@
-from core.gemini_client import generate_response
+from core.gemini_client import generate_response 
 import json
-
 def extract_entities_from_docs(docs):
-    text = "\n".join(docs)
-    prompt =  f"""
-    Extract the most important medical entities from the context below.
+    all_entities = set()
 
-    Focus on:
-    - diseases
-    - symptoms
-    - treatments
-    - drugs
-    - risk factors
+    for doc in docs[:3]:   # 🔥 only top-k chunks (important)
+        prompt = f"""
+        Extract the most important medical entities from the context below.
 
-    Return JSON ONLY:
-    {{
-    "entities": ["entity1", "entity2", ...]
-    }}
+        Focus on:
+        - diseases
+        - symptoms
+        - treatments
+        - drugs
+        - risk factors
+        - biomarkers
 
-    Context:
-    {text}
-    """
-    ans = generate_response(prompt)
-    print(ans)
+        Return JSON ONLY:
+        {{
+        "entities": ["entity1", "entity2", ...]
+        }}
 
-    ans = ans.strip()
-    if ans.startswith("```"):
-        ans = ans.split("```")[1]
-        if ans.startswith("json"):
-            ans = ans[4:]
+        Context:
+        {doc}
+        """
+
+        ans = generate_response(prompt)
+
         ans = ans.strip()
-    
-    try:
-        data = json.loads(ans)
-        entities = [e.lower() for e in data.get("entities", [])]
-        return entities
-    except Exception as e:
-        print("[DEBUG] ENTITY PARSE ERROR:", e)
-        return []
+        if ans.startswith("```"):
+            ans = ans.split("```")[1]
+            if ans.startswith("json"):
+                ans = ans[4:]
+            ans = ans.strip()
+
+        try:
+            data = json.loads(ans)
+            entities = [e.lower() for e in data.get("entities", [])]
+            all_entities.update(entities)
+        except Exception as e:
+            print("[DEBUG] ENTITY PARSE ERROR:", e)
+
+    return list(all_entities)

@@ -8,16 +8,16 @@ from hybrid.run_hybrid import run_hybrid_query
 
 data_input = [
     {
-        "query": "Explain the role of Negative Pressure Wound Therapy in diabetic foot ulcer",
-        "ground_truth": "Negative Pressure Wound Therapy improves healing in diabetic foot ulcers by promoting granulation tissue formation and increasing healing rates compared to standard care."
+        "query": "how does vitamin d affect diabetic peripheral neuropathy",
+        "ground_truth": "Vitamin D supplementation may improve painful diabetic peripheral neuropathy (DPN) by reducing pain scores and improving quality of life. Its effects are linked to anti-inflammatory action, promotion of nerve regeneration, and increased neurotrophic factors. However, evidence is limited and requires further randomized trials to confirm efficacy and optimal treatment protocols."
     },
     {
-        "query": "How does topical capsaicin 0.075 compare to lower concentrations?",
-        "ground_truth": "Topical capsaicin 0.075 percent is more effective than lower concentrations like 0.025 percent in reducing neuropathic pain, with manageable localized side effects."
+        "query": "What is the metabolically obese normal weight (MONW) phenotype in children, and what are its prevalence, key metabolic features, and early-life risk factors?",
+        "ground_truth": "The MONW phenotype refers to children with normal BMI but adverse metabolic abnormalities. Its prevalence ranges from 10.6% to 56.2%. Affected children show visceral adiposity, insulin resistance, dyslipidaemia, hypertension, impaired glucose metabolism, and low-grade inflammation. Key early-life risk factors include extreme birth weight, rapid infant weight gain, poor maternal metabolic health, unhealthy diet, and sedentary behavior."
     },
     {
-        "query": "What were the outcomes of low vs high dose atorvastatin in macular edema?",
-        "ground_truth": "Low-dose atorvastatin showed better improvements in visual acuity and macular thickness compared to high-dose when used with anti-VEGF therapy."
+        "query": "How do exosomal microRNAs function as biomarkers for Alzheimer's disease, and which specific miRNAs are most consistently associated with its pathology?",
+        "ground_truth": "Exosomal miRNAs are promising biomarkers for Alzheimer's disease due to their stability, tissue specificity, and ability to cross the blood–brain barrier, reflecting key pathological processes such as amyloid-β deposition, tau phosphorylation, and neuroinflammation. Among 120 identified miRNAs, miR-125b, miR-146a, miR-193b, miR-185-5p, miR-29b/c, and miR-21-5p are the most consistently associated with AD."
     }
 ]
 

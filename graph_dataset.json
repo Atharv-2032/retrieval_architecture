@@ -1,29 +1,27 @@
 [
   {
-    "question": "Explain the role of Negative Pressure Wound Therapy in diabetic foot ulcer",
-    "answer": "Negative Pressure Wound Therapy (NPWT) is a treatment for Diabetic Foot Ulcer. This information is supported by the research paper \"Effects of non-pharmacological interventions on ulcer healing in patients with diabetic foot: a network meta-analysis of randomized controlled trials.\"",
+    "question": "how does vitamin d affect diabetic peripheral neuropathy",
+    "answer": "Vitamin D deficiency is common in patients with diabetes mellitus (DM) and has been associated with both the presence and severity of painful diabetic peripheral neuropathy (DPN).",
     "contexts": [
-      "Disease: Diabetic Foot Ulcer. Treatments: Negative Pressure Wound Therapy. Evidence: Effects of non-pharmacological interventions on ulcer healing in patients with diabetic foot: a network meta-analysis of randomized controlled trials."
+      "Painful diabetic peripheral neuropathy (DPN), a debilitating complication of diabetes mellitus (DM), significantly reduces quality of life. Vitamin D deficiency is common in patients with DM and has been associated with both the presence and severity of DPN."
     ],
-    "ground_truth": "Negative Pressure Wound Therapy improves healing in diabetic foot ulcers by promoting granulation tissue formation and increasing healing rates compared to standard care."
+    "ground_truth": "Vitamin D supplementation may improve painful diabetic peripheral neuropathy (DPN) by reducing pain scores and improving quality of life. Its effects are linked to anti-inflammatory action, promotion of nerve regeneration, and increased neurotrophic factors. However, evidence is limited and requires further randomized trials to confirm efficacy and optimal treatment protocols."
   },
   {
-    "question": "How does topical capsaicin 0.075 compare to lower concentrations?",
-    "answer": "There is no information in the provided context about how topical capsaicin 0.075% compares to lower concentrations.",
+    "question": "What is the metabolically obese normal weight (MONW) phenotype in children, and what are its prevalence, key metabolic features, and early-life risk factors?",
+    "answer": "The metabolically obese normal weight (MONW) phenotype in children is characterized by an adverse metabolic profile despite having a normal Body Mass Index (BMI). Children with MONW have a higher risk of long-term cardiometabolic complications.\n\nKey metabolic features of MONW include:\n*   Higher visceral adiposity\n*   Insulin resistance (IR)\n*   Dyslipidaemia\n*   Hypertension\n*   Impaired glucose metabolism\n*   Elevated markers of low-grade inflammation\n\nThe provided context does not contain information on the prevalence or early-life risk factors of the MONW phenotype in children.",
     "contexts": [
-      "Disease: neuropathic pain. Evidence: Systematic Review of Topical Capsaicin 0.075% for the Treatment of Neuropathic Pain: Efficacy, Safety, and Tolerability.",
-      "Disease: painful diabetic peripheral neuropathy. Evidence: Systematic Review of Topical Capsaicin 0.075% for the Treatment of Neuropathic Pain: Efficacy, Safety, and Tolerability.",
-      "Disease: postherpetic neuralgia. Evidence: Systematic Review of Topical Capsaicin 0.075% for the Treatment of Neuropathic Pain: Efficacy, Safety, and Tolerability."
+      "Children with normal Body Mass Index (BMI) may still exhibit adverse metabolic profile-termed as the metabolically obese normal weight (MONW) phenotype, placing them at increased risk of long-term cardiometabolic complications. Early risk stratification integrating metabolic proofing and central adiposity measures may enable timely prevention of long-term metabolic disease.",
+      "Children with normal Body Mass Index (BMI) may still exhibit adverse metabolic profile-termed as the metabolically obese normal weight (MONW) phenotype, placing them at increased risk of long-term cardiometabolic complications. Children with MONW consistently showed higher visceral adiposity, insulin resistance (IR), dyslipidaemia, hypertension, impaired glucose metabolism and elevated markers of low-grade inflammation despite having normal BMI."
     ],
-    "ground_truth": "Topical capsaicin 0.075 percent is more effective than lower concentrations like 0.025 percent in reducing neuropathic pain, with manageable localized side effects."
+    "ground_truth": "The MONW phenotype refers to children with normal BMI but adverse metabolic abnormalities. Its prevalence ranges from 10.6% to 56.2%. Affected children show visceral adiposity, insulin resistance, dyslipidaemia, hypertension, impaired glucose metabolism, and low-grade inflammation. Key early-life risk factors include extreme birth weight, rapid infant weight gain, poor maternal metabolic health, unhealthy diet, and sedentary behavior."
   },
   {
-    "question": "What were the outcomes of low vs high dose atorvastatin in macular edema?",
-    "answer": "Based on the provided context, there is no information about the outcomes of low vs. high dose atorvastatin in macular edema. The context mentions atorvastatin in relation to diabetic macular edema and clinically significant macular edema (CSME) as part of statin therapy, but it does not differentiate between dosages or their specific outcomes.",
+    "question": "How do exosomal microRNAs function as biomarkers for Alzheimer's disease, and which specific miRNAs are most consistently associated with its pathology?",
+    "answer": "Exosomal microRNAs (miRNAs) function as biomarkers for Alzheimer's disease (AD) due to their stability, tissue specificity, and ability to cross the blood-brain barrier. The analysis identified 120 exosomal miRNAs that are differentially expressed at different AD ages. The provided context does not specify which particular miRNAs are most consistently associated with AD pathology.",
     "contexts": [
-      "Disease: clinically significant macular edema. Drugs: atorvastatin, ranibizumab. Treatments: statin therapy, anti-VEGF therapy. Evidence: Assessing the Role of Statins as an Adjunctive Anti-VEGF Therapy for Clinically Significant Macular Edema (CSME) in Type 2 Diabetes Mellitus.",
-      "Disease: diabetic macular edema. Drugs: atorvastatin. Treatments: statin therapy. Evidence: Assessing the Role of Statins as an Adjunctive Anti-VEGF Therapy for Clinically Significant Macular Edema (CSME) in Type 2 Diabetes Mellitus."
+      "Exosomal microRNAs (miRNAs), due to their stability, tissue specificity, and ability to cross the blood-brain barrier, show significant promise as ideal biomarkers for AD. The analysis identified 120 exosomal miRNAs that are differentially expressed at different AD ages."
     ],
-    "ground_truth": "Low-dose atorvastatin showed better improvements in visual acuity and macular thickness compared to high-dose when used with anti-VEGF therapy."
+    "ground_truth": "Exosomal miRNAs are promising biomarkers for Alzheimer's disease due to their stability, tissue specificity, and ability to cross the blood\u2013brain barrier, reflecting key pathological processes such as amyloid-\u03b2 deposition, tau phosphorylation, and neuroinflammation. Among 120 identified miRNAs, miR-125b, miR-146a, miR-193b, miR-185-5p, miR-29b/c, and miR-21-5p are the most consistently associated with AD."
   }
 ]

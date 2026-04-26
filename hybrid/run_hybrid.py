@@ -43,8 +43,7 @@ def run():
     print("\nAssistant:\n")
     print(answer)
 
-if __name__ == "__main__":
-    run()
+
 def run_hybrid_query(query):
     state = {
         "query": query,
@@ -59,3 +58,5 @@ def run_hybrid_query(query):
         "answer": result["ans"],
         "retrieved_docs": result["retrieved_docs"]
     }
+if __name__ == "__main__":
+    run()

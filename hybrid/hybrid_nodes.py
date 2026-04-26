@@ -29,25 +29,10 @@ def hybrid_retrieve_node(state):
 
     # STEP 6: Format graph docs
     graph_docs = []
-
     for r in graph_results:
-        text = ""
-
-        if r.get("entity"):
-            text += f"Entity: {r['entity']}\n"
-
-        if r.get("related_entities"):
-            text += "Related: " + ", ".join(r["related_entities"][:5]) + "\n"
-
-        if r.get("second_hop"):
-            text += "Expanded: " + ", ".join(r["second_hop"][:5]) + "\n"
-
-        if r.get("papers"):
-            text += "Evidence: " + ", ".join(r["papers"][:3]) + "\n"
-
-        if text.strip():
-            graph_docs.append(text.strip())
-
+        if r.get("context"):
+            graph_docs.append(r["context"].strip())
+    
     # STEP 7: Combine
     combined_docs = []
     combined_docs.extend(vector_docs[:4])

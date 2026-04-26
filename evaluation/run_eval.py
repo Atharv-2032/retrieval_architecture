@@ -32,7 +32,7 @@ hybrid_ds = load_dataset("hybrid_dataset.json")
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-llm = llm_factory("gpt-4o-mini",client = client)
+llm = llm_factory("gpt-4o-mini",client = client,max_tokens = 5000)
 
 
 if USE_OPENAI_EMBEDDINGS:
