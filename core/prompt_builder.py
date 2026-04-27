@@ -1,7 +1,21 @@
 def build_prompt(query, retrieved_docs):
+    if not retrieved_docs:
+        return f"""
+    You are a medical research assistant.
+
+    Question:
+    {query}
+
+    No context was retrieved from the knowledge base for this query.
+    You MUST respond with exactly: "No relevant information found in the knowledge base."
+    Do not provide any other information or use outside knowledge.
+
+    Answer:
+    """
 
     context = "\n".join(retrieved_docs)
-    prompt =  f"""
+    
+    return f"""
     You are a medical research assistant.
 
     The context may contain structured medical knowledge including:
@@ -18,16 +32,11 @@ def build_prompt(query, retrieved_docs):
     {query}
 
     Instructions:
-    - if there are no documents retrieved, dont give an answer - answer with no context retrieved
-    - do NOT hallucinate
-    - Use only the provided context
+    - Use ONLY the provided context above
+    - Do not use outside knowledge
     - Identify relevant entities and relationships
     - Combine information if multiple entries exist
-    - Do not use outside knowledge
-    - If no relevant information is found, say so clearly
+    - If no relevant information is found in the context, say so clearly
 
     Answer:
     """
-    return prompt
-
-           
