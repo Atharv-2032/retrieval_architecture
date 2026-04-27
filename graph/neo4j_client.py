@@ -7,7 +7,7 @@ class Neo4jClient:
         url = os.getenv("NEO4J_URL")
         self.driver = GraphDatabase.driver(
             url,   
-            auth=("neo4j",password )
+            auth=("neo4j",password ) 
         )
 
     def close(self):
