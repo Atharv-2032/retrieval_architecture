@@ -10,7 +10,6 @@ Focus on:
 - symptoms
 - treatments
 - drugs
-- biomarkers
 - risk factors
 
 Return JSON ONLY:
