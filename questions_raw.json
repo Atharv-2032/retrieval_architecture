@@ -1,0 +1,152 @@
+[
+  {
+    "question": "What does oxytocin enhance in mothers with postpartum depression?",
+    "type": "single",
+    "context": "We examined whether intranasal oxytocin affects maternal caregiving, mood, and stress physiology in mothers with postpartum depression (PPD). Oxytocin enhances positive maternal emotions in PPD and may represent a neurobiological link between PPD and reduced positive caregiving."
+  },
+  {
+    "question": "What specific outcomes were improved by nurse-led psychosocial programs according to FEMI RCTs?",
+    "type": "single",
+    "context": "Two FEMI RCTs found that nurse-led psychoeducation and psychosocial programs improved in-patient duration, symptoms, insight, self-efficacy, quality of life, and engagement. For early BD, limited evidence suggests that combining pharmacotherapy with family-focused therapy or structured psychoeducation may improve the course of illness and treatment satisfaction."
+  },
+  {
+    "question": "What was the overall significance of dulaglutide-associated changes in substantive cognitive impairment (SCI)?",
+    "type": "single",
+    "context": "This post hoc analysis of the Researching Cardiovascular Events with a Weekly Incretin in Diabetes (REWIND) trial examined associations between dulaglutide, Alzheimer's disease and related dementia (ADRD) biomarkers, and substantive cognitive impairment (SCI). Dulaglutide-associated changes in biomarkers or SCI were nonsignificant overall."
+  },
+  {
+    "question": "What was the c-index for forecasting the risk of recurrence in NSCLC using radiomics-based ML models combined with clinical features in the training set?",
+    "type": "single",
+    "context": "Recent studies have investigated the radiomics-based machine learning (ML) models for detecting the risk of recurrence in NSCLC. The c-index of the radiomics-based ML models combined with clinical features for forecasting the risk of recurrence in NSCLC was 0.833 (95% CI 0.822-0.854, 95% PI 0.717-0.945) in the training set."
+  },
+  {
+    "question": "What disease were cognitive-behavioral therapy and psychodynamic therapy compared for?",
+    "type": "single",
+    "context": "We did so in the context of an individual participant data meta-analysis of clinical trials that compared classes of cognitive-behavioral therapy and psychodynamic therapy for depression. Patients completed measures of depression at baseline and posttreatment."
+  },
+  {
+    "question": "What type of training remains fundamental in stroke rehabilitation?",
+    "type": "single",
+    "context": "Integrating resistance training with targeted adjunctive training particularly electrical stimulation therapy or stretching training yields superior therapeutic outcomes and supports individualized, evidence-based strategies for optimizing lower-limb recovery after stroke. Resistance training remains fundamental in stroke rehabilitation."
+  },
+  {
+    "question": "What was the primary outcome concerning preventer inhalers?",
+    "type": "single",
+    "context": "Suboptimal use of preventer inhalers and salbutamol reliever overprescribing are associated with preventable asthma deaths and are a major source of primary care carbon emissions. The primary outcome was the proportion of preventer inhalers prescribed in pressurised metred-dose devices due to their high carbon footprint."
+  },
+  {
+    "question": "For which patient populations do EASL-EASD-EASO guidelines recommend tirzepatide?",
+    "type": "single",
+    "context": "Recent EASL-EASD-EASO guidelines recommend tirzepatide for MASLD patients with obesity, T2D, or cardiometabolic risk. Clinical evidence shows that tirzepatide induces substantial weight loss, improves glycaemic control, and reduces hepatic biomarkers such as ALT, AST, K 18, and Pro C3."
+  },
+  {
+    "question": "What was the established MCID value relevant to quality of life and symptom control improvements?",
+    "type": "single",
+    "context": "We conducted a systematic review and meta-analysis of randomized controlled trials evaluating interactive remote digital management (smartphone applications or web-based platforms) vs. usual care in adults with physician-diagnosed asthma and \u22656 months follow-up. Interactive remote digital management statistically significant but modest improvements in quality of life and symptom control, which did not reach the established MCID of 0.5."
+  },
+  {
+    "question": "What glucose-related property do SGLT2 inhibitors offer?",
+    "type": "single",
+    "context": "Sodium-glucose cotransporter-2 (SGLT2) inhibitors offer glucose-lowering, cardio-protective and reno-protective properties. SGLT2 inhibitors as a class provide a consistent and significant reduction in all-cause mortality across both short-term (up to one year) and long-term follow-up."
+  },
+  {
+    "question": "What specific types of targeted adjunctive training can be integrated with resistance training to optimize lower-limb recovery after stroke?",
+    "type": "multi",
+    "context": "Integrating resistance training with targeted adjunctive training particularly electrical stimulation therapy or stretching training yields superior therapeutic outcomes and supports individualized, evidence-based strategies for optimizing lower-limb recovery after stroke. Resistance training remains fundamental in stroke rehabilitation."
+  },
+  {
+    "question": "What type of programs improved both symptoms and quality of life according to FEMI RCTs?",
+    "type": "multi",
+    "context": "Two FEMI RCTs found that nurse-led psychoeducation and psychosocial programs improved in-patient duration, symptoms, insight, self-efficacy, quality of life, and engagement. For early BD, limited evidence suggests that combining pharmacotherapy with family-focused therapy or structured psychoeducation may improve the course of illness and treatment satisfaction."
+  },
+  {
+    "question": "What medical entities were examined for associations with dulaglutide in the post hoc analysis of the REWIND trial?",
+    "type": "multi",
+    "context": "This post hoc analysis of the Researching Cardiovascular Events with a Weekly Incretin in Diabetes (REWIND) trial examined associations between dulaglutide, Alzheimer's disease and related dementia (ADRD) biomarkers, and substantive cognitive impairment (SCI). Dulaglutide-associated changes in biomarkers or SCI were nonsignificant overall."
+  },
+  {
+    "question": "What primary clinical effects does tirzepatide demonstrate, including its impact on glycaemic control and hepatic biomarkers?",
+    "type": "multi",
+    "context": "Recent EASL-EASD-EASO guidelines recommend tirzepatide for MASLD patients with obesity, T2D, or cardiometabolic risk. Clinical evidence shows that tirzepatide induces substantial weight loss, improves glycaemic control, and reduces hepatic biomarkers such as ALT, AST, K 18, and Pro C3."
+  },
+  {
+    "question": "What were the two measured outcomes for which interactive remote digital management showed statistically significant but modest improvements?",
+    "type": "multi",
+    "context": "We conducted a systematic review and meta-analysis of randomized controlled trials evaluating interactive remote digital management (smartphone applications or web-based platforms) vs. usual care in adults with physician-diagnosed asthma and \u22656 months follow-up. Interactive remote digital management statistically significant but modest improvements in quality of life and symptom control, which did not reach the established MCID of 0.5."
+  },
+  {
+    "question": "Which two aspects related to inhaler prescribing and use are associated with preventable asthma deaths?",
+    "type": "multi",
+    "context": "Suboptimal use of preventer inhalers and salbutamol reliever overprescribing are associated with preventable asthma deaths and are a major source of primary care carbon emissions. The primary outcome was the proportion of preventer inhalers prescribed in pressurised metred-dose devices due to their high carbon footprint."
+  },
+  {
+    "question": "What specific types of therapy were compared for depression within the individual participant data meta-analysis?",
+    "type": "multi",
+    "context": "We did so in the context of an individual participant data meta-analysis of clinical trials that compared classes of cognitive-behavioral therapy and psychodynamic therapy for depression. Patients completed measures of depression at baseline and posttreatment."
+  },
+  {
+    "question": "What three aspects of mothers with postpartum depression were examined for the effects of intranasal oxytocin?",
+    "type": "multi",
+    "context": "We examined whether intranasal oxytocin affects maternal caregiving, mood, and stress physiology in mothers with postpartum depression (PPD). Oxytocin enhances positive maternal emotions in PPD and may represent a neurobiological link between PPD and reduced positive caregiving."
+  },
+  {
+    "question": "What was the 95% confidence interval associated with the 0.833 c-index for radiomics-based ML models combined with clinical features forecasting NSCLC recurrence?",
+    "type": "multi",
+    "context": "Recent studies have investigated the radiomics-based machine learning (ML) models for detecting the risk of recurrence in NSCLC. The c-index of the radiomics-based ML models combined with clinical features for forecasting the risk of recurrence in NSCLC was 0.833 (95% CI 0.822-0.854, 95% PI 0.717-0.945) in the training set."
+  },
+  {
+    "question": "What are two protective properties offered by SGLT2 inhibitors, and what is their effect on all-cause mortality?",
+    "type": "multi",
+    "context": "Sodium-glucose cotransporter-2 (SGLT2) inhibitors offer glucose-lowering, cardio-protective and reno-protective properties. SGLT2 inhibitors as a class provide a consistent and significant reduction in all-cause mortality across both short-term (up to one year) and long-term follow-up."
+  },
+  {
+    "question": "How does the 95% confidence interval (0.822-0.854) compare to the 95% prediction interval (0.717-0.945) for the c-index of radiomics-based ML models combined with clinical features?",
+    "type": "comparison",
+    "context": "Recent studies have investigated the radiomics-based machine learning (ML) models for detecting the risk of recurrence in NSCLC. The c-index of the radiomics-based ML models combined with clinical features for forecasting the risk of recurrence in NSCLC was 0.833 (95% CI 0.822-0.854, 95% PI 0.717-0.945) in the training set."
+  },
+  {
+    "question": "How did the observed improvements in quality of life and symptom control with interactive remote digital management compare to the established MCID of 0.5?",
+    "type": "comparison",
+    "context": "We conducted a systematic review and meta-analysis of randomized controlled trials evaluating interactive remote digital management (smartphone applications or web-based platforms) vs. usual care in adults with physician-diagnosed asthma and \u22656 months follow-up. Interactive remote digital management statistically significant but modest improvements in quality of life and symptom control, which did not reach the established MCID of 0.5."
+  },
+  {
+    "question": "How do the known effects of oxytocin on positive maternal emotions compare with its potential role in linking postpartum depression to reduced positive caregiving?",
+    "type": "comparison",
+    "context": "We examined whether intranasal oxytocin affects maternal caregiving, mood, and stress physiology in mothers with postpartum depression (PPD). Oxytocin enhances positive maternal emotions in PPD and may represent a neurobiological link between PPD and reduced positive caregiving."
+  },
+  {
+    "question": "How does the recommendation for tirzepatide for MASLD patients with obesity differ from its recommendation for MASLD patients with T2D?",
+    "type": "comparison",
+    "context": "Recent EASL-EASD-EASO guidelines recommend tirzepatide for MASLD patients with obesity, T2D, or cardiometabolic risk. Clinical evidence shows that tirzepatide induces substantial weight loss, improves glycaemic control, and reduces hepatic biomarkers such as ALT, AST, K 18, and Pro C3."
+  },
+  {
+    "question": "How does the reduction in all-cause mortality compare between short-term and long-term follow-up for SGLT2 inhibitors?",
+    "type": "comparison",
+    "context": "Sodium-glucose cotransporter-2 (SGLT2) inhibitors offer glucose-lowering, cardio-protective and reno-protective properties. SGLT2 inhibitors as a class provide a consistent and significant reduction in all-cause mortality across both short-term (up to one year) and long-term follow-up."
+  },
+  {
+    "question": "What specific diseases or patient populations are SGLT2 inhibitors indicated for according to the excerpt?",
+    "type": "negative",
+    "context": "Sodium-glucose cotransporter-2 (SGLT2) inhibitors offer glucose-lowering, cardio-protective and reno-protective properties. SGLT2 inhibitors as a class provide a consistent and significant reduction in all-cause mortality across both short-term (up to one year) and long-term follow-up."
+  },
+  {
+    "question": "What was the specific numerical improvement value for quality of life or symptom control achieved by interactive remote digital management?",
+    "type": "negative",
+    "context": "We conducted a systematic review and meta-analysis of randomized controlled trials evaluating interactive remote digital management (smartphone applications or web-based platforms) vs. usual care in adults with physician-diagnosed asthma and \u22656 months follow-up. Interactive remote digital management statistically significant but modest improvements in quality of life and symptom control, which did not reach the established MCID of 0.5."
+  },
+  {
+    "question": "What specific details about the Alzheimer's disease and related dementia (ADRD) biomarkers were analyzed?",
+    "type": "negative",
+    "context": "This post hoc analysis of the Researching Cardiovascular Events with a Weekly Incretin in Diabetes (REWIND) trial examined associations between dulaglutide, Alzheimer's disease and related dementia (ADRD) biomarkers, and substantive cognitive impairment (SCI). Dulaglutide-associated changes in biomarkers or SCI were nonsignificant overall."
+  },
+  {
+    "question": "What was the c-index of the radiomics-based ML models combined with clinical features for forecasting the risk of recurrence in NSCLC in a validation or test set?",
+    "type": "negative",
+    "context": "Recent studies have investigated the radiomics-based machine learning (ML) models for detecting the risk of recurrence in NSCLC. The c-index of the radiomics-based ML models combined with clinical features for forecasting the risk of recurrence in NSCLC was 0.833 (95% CI 0.822-0.854, 95% PI 0.717-0.945) in the training set."
+  },
+  {
+    "question": "What specific measures were used to assess depression at baseline and posttreatment?",
+    "type": "negative",
+    "context": "We did so in the context of an individual participant data meta-analysis of clinical trials that compared classes of cognitive-behavioral therapy and psychodynamic therapy for depression. Patients completed measures of depression at baseline and posttreatment."
+  }
+]

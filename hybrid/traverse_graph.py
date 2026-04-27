@@ -13,48 +13,43 @@ def traverse_graph(matched_nodes, paths, k=2):
         entity_clean = normalize_entity(node["values"])
 
         cypher = """
-        
-                 MATCH (n)
-        WHERE n.name IS NOT NULL OR n.title IS NOT NULL
+MATCH (n)
+WHERE n.name IS NOT NULL OR n.title IS NOT NULL
 
-        WITH n,
-             toLower(coalesce(n.name, n.title)) AS name,
-             $entity AS entity
+WITH n,
+     toLower(coalesce(n.name, n.title)) AS name,
+     $entity AS entity
 
-        WITH n, name, entity,
-        CASE 
-            WHEN name = entity THEN 5
-            WHEN name STARTS WITH entity THEN 4
-            WHEN entity STARTS WITH name THEN 4
-            WHEN name CONTAINS entity THEN 3
-            WHEN entity CONTAINS name THEN 3
-            ELSE 0
-        END AS score
+WITH n, name, entity,
+CASE 
+    WHEN name = entity THEN 5
+    WHEN name STARTS WITH entity THEN 4
+    WHEN entity STARTS WITH name THEN 4
+    WHEN name CONTAINS entity THEN 3
+    WHEN entity CONTAINS name THEN 3
+    ELSE 0
+END AS score
 
-        WHERE score > 0
+WHERE score > 0
 
-        WITH n, score
-        ORDER BY score DESC
-        LIMIT $k
+WITH n, score
+ORDER BY score DESC
+LIMIT $k
 
-        OPTIONAL MATCH (n)-[r]->(x)
-        WHERE type(r) IN $paths AND r.context IS NOT NULL
+OPTIONAL MATCH (n)-[r1]->(x)
+WHERE type(r1) IN $paths AND r1.context IS NOT NULL
 
+OPTIONAL MATCH (y)-[r2]->(n)
+WHERE type(r2) IN $paths AND r2.context IS NOT NULL
 
-        OPTIONAL MATCH (y)-[r2]->(n)
-        WHERE type(r2) IN $paths AND r2.context IS NOT NULL
+WITH score,
+     [c IN collect(DISTINCT r1.context) + collect(DISTINCT r2.context) WHERE c IS NOT NULL] AS contexts
 
-        WITH 
-            score,
-            collect(DISTINCT r.context) + collect(DISTINCT r2.context) AS contexts
-
-        UNWIND contexts AS context
-
-        RETURN context, score
-        ORDER BY score DESC
-        LIMIT $k
-
-        """
+UNWIND contexts AS context
+RETURN context, score
+ORDER BY score DESC
+LIMIT $k
+"""
 
         query_results = client.run_query(
             cypher,
