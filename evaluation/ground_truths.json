@@ -1,0 +1,837 @@
+[
+  {
+    "question": "What is the study about regarding Huangqi Guizhi Wuwu decoction and intrathecal Pemetrexed chemotherapy?",
+    "ground_truth": "This study investigates the efficacy and safety of Huangqi Guizhi Wuwu decoction (HGWD) in mitigating neurotoxicity induced by intrathecal Pemetrexed chemotherapy in NSCLC patients with LM. The study found that HGWD significantly reduced the incidence of neurotoxicity and improved chemotherapy tolerance and survival benefits, with a good safety profile.",
+    "hop_type": "single",
+    "source_abstracts": [
+      {
+        "title": "[Huangqi Guizhi Wuwu Decoction in the Treatment of Pemetrexed Intrathecal Chemotherapy-induced Neurotoxicity in NSCLC Patients with Leptomeningeal Metastases: A Randomized Controlled Trial].",
+        "bm25_score": 40.53
+      }
+    ]
+  },
+  {
+    "question": "What is the efficacy and safety of direct oral anticoagulants compared to heparin in pediatric patients, according to the systematic review and meta-analysis?",
+    "ground_truth": "DOACs were associated with a significant reduction in TE recurrence in treatment studies (RR = 0.50; 95% CI 0.25-0.99) and TE occurrence in prophylaxis studies (RR = 0.63; 95% CI 0.42-0.95). Major bleeding was comparable to SOC with a favorable trend observed for DOACs (RR = 0.64; 95% CI 0.26-1.55).",
+    "hop_type": "single",
+    "source_abstracts": [
+      {
+        "title": "Efficacy and safety of direct oral anticoagulants in pediatric patients: a systematic review and meta-analysis.",
+        "bm25_score": 44.077
+      }
+    ]
+  },
+  {
+    "question": "Does the systematic review and meta-analysis titled 'Antenatal psychological interventions may ameliorate postpartum depression' mention mindfulness as a type of prenatal psychological intervention?",
+    "ground_truth": "Yes, the study mentions mindfulness as an example of a prenatal psychological intervention. It was included as part of the search for randomized controlled trials assessing prenatal psychological interventions.",
+    "hop_type": "single",
+    "source_abstracts": [
+      {
+        "title": "Antenatal psychological interventions may ameliorate postpartum depression: a systematic review and meta-analysis.",
+        "bm25_score": 35.697
+      }
+    ]
+  },
+  
+  {
+    "question": "What medical databases were searched in the systematic review and meta-analysis titled 'Effects of Transcranial Magnetic Stimulation on Patients with Major Depressive Disorder'?",
+    "ground_truth": "The medical databases searched were PubMed, Embase, Cochrane Library, China National Knowledge Infrastructure (CNKI), and SinoMed.",
+    "hop_type": "single",
+    "source_abstracts": [
+      {
+        "title": "Effects of Transcranial Magnetic Stimulation on Patients with Major Depressive Disorder: A Systematic Review and Meta-analysis.",
+        "bm25_score": 38.573
+      }
+    ]
+  },
+  {
+    "question": "What medical concepts were searched for in the meta-analysis study on the effect of education on deep vein thrombosis in orthopedic surgery patients?",
+    "ground_truth": "The medical concepts searched for were \"deep vein thrombosis,\" \"orthopedic surgery,\" and \"patient education.\" These terms were searched in both Turkish and English within the last 20 years across several databases.",
+    "hop_type": "single",
+    "source_abstracts": [
+      {
+        "title": "The effect of education on deep vein trombosis in patients undergoing orthopedic surgery: a meta-analysis study.",
+        "bm25_score": 54.206
+      }
+    ]
+  },
+  {
+    "question": "What are the primary outcomes measured in the systematic review titled 'Optimal Strategy of Resistance Training Combined With Other Rehabilitation Interventions for Lower-Limb Dysfunction in Stroke Patients'?",
+    "ground_truth": "The primary outcomes measured were balance, lower-limb motor function, and walking ability. These were used to evaluate the effectiveness of resistance training alone versus resistance training combined with other rehabilitation modalities.",
+    "hop_type": "single",
+    "source_abstracts": [
+      {
+        "title": "Optimal Strategy of Resistance Training Combined With Other Rehabilitation Interventions for Lower-Limb Dysfunction in Stroke Patients: A Systematic Review and Network Meta-Analysis.",
+        "bm25_score": 62.991
+      }
+    ]
+  },
+  {
+    "question": "What are the observed benefits of combining pharmacotherapy with family-focused therapy or structured psychoeducation for early BD, specifically concerning treatment discontinuation?",
+    "ground_truth": "Limited evidence suggests that combining pharmacotherapy with family-focused therapy or structured psychoeducation may improve the course of illness and treatment satisfaction for early BD. The context does not provide specific information regarding treatment discontinuation benefits.",
+    "hop_type": "single",
+    "source_abstracts": [
+      {
+        "title": "A systematic review of specialized psychosocial and complex psychosocial interventions for early psychosis, early depression, early bipolar disorder, and early borderline personality disorder.",
+        "bm25_score": 45.717
+      }
+    ]
+  },
+  {
+    "question": "What are the observed changes in pulmonary function indexes, such as FEV1 and PEF, in patients with cough variant asthma of wind cold attacking the lung treated with modified painless wheat-grain blistering moxibustion?",
+    "ground_truth": "After treatment, FEV1, PEF, and FEV1/FVC% were increased compared with those before treatment (P<0.05) in both groups. The FEV1, PEF, and FEV1/FVC% in the wheat-grain blistering moxibustion group were higher than those in the montelukast sodium group (P<0.01, P<0.05).",
+    "hop_type": "single",
+    "source_abstracts": [
+      {
+        "title": "[Effect of modified painless wheat-grain blistering moxibustion on cough variant asthma of wind cold attacking the lung: a randomized controlled trial].",
+        "bm25_score": 90.644
+      }
+    ]
+  },
+  {
+    "question": "According to the systematic review on heart failure therapies in Brazil, what is the incremental cost-effectiveness ratio (ICER) of spironolactone for patients with reduced ejection fraction from the SUS perspective?",
+    "ground_truth": "From the SUS perspective, in patients with HF with reduced ejection fraction, spironolactone was cost-effective with an incremental cost-effectiveness ratio (ICER) of Int$ 7,955/QALY.",
+    "hop_type": "single",
+    "source_abstracts": [
+      {
+        "title": "Cost-Effectiveness of Therapies for Heart Failure in Brazil: A Systematic Review.",
+        "bm25_score": 65.207
+      }
+    ]
+  },
+  {
+    "question": "What impact did the synbiotic Bactecal® have on patients with uncontrolled asthma?",
+    "ground_truth": "The synbiotic Bactecal® had a positive impact on patients with uncontrolled asthma. It improved airway obstruction while decreasing airway type-2 inflammation, specifically by significantly improving FEV<sub>1</sub>/FVC and reducing eosinophilic airway inflammation and sputum IL-4 level.",
+    "hop_type": "single",
+    "source_abstracts": [
+      {
+        "title": "Synbiotic Bactecal® reduces airway obstruction, sputum eosinophils and IL-4 but increases sputum IL-8 in patients with uncontrolled asthma.",
+        "bm25_score": 36.426
+      }
+    ]
+  },
+  {
+    "question": "What is the risk ratio for major bleeding events in pediatric patients treated with DOACs compared to standard of care, according to the systematic review and meta-analysis?",
+    "ground_truth": "Major bleeding was comparable to SOC with a favorable trend observed for DOACs with a risk ratio (RR) of 0.64 and a 95% confidence interval (CI) of 0.26-1.55. No significant differences were found in all-cause mortality and serious adverse events.",
+    "hop_type": "single",
+    "source_abstracts": [
+      {
+        "title": "Efficacy and safety of direct oral anticoagulants in pediatric patients: a systematic review and meta-analysis.",
+        "bm25_score": 42.847
+      }
+    ]
+  },
+  {
+    "question": "What is the relationship between ferroptosis and POU2F3 in the context of small cell lung cancer?",
+    "ground_truth": "The POU class 2 homeobox 3 (POU2F3) molecular subtype of SCLC exhibits differential ferroptosis gene expressions, influencing therapeutic responsiveness. Non-neuroendocrine subtypes are more ferroptosis-prone, whereas neuroendocrine variants display enhanced antioxidant defenses.",
+    "hop_type": "single",
+    "source_abstracts": [
+      {
+        "title": "Ferroptosis as a Translational Axis in Small Cell Lung Cancer: A Systematic Review of Redox Pathways and Precision Oncology Prospects.",
+        "bm25_score": 29.534
+      }
+    ]
+  },
+  {
+    "question": "What percentage of pregnant women experience dyspnea during pregnancy, according to the introduction of the paper on spirometry safety?",
+    "ground_truth": "Up to 75% of pregnant women complain of dyspnea at some point during pregnancy.",
+    "hop_type": "single",
+    "source_abstracts": [
+      {
+        "title": "Safety of Performing Spirometry During Pregnancy: A Systematic Review.",
+        "bm25_score": 41.142
+      }
+    ]
+  },
+  {
+    "question": "What is the efficacy of gefitinib in treating CNS metastases in patients with advanced EGFR-mutated non-small cell lung cancer?",
+    "ground_truth": "In the cFAS, median CNS PFS was 15.2 months with gefitinib (95% CI, 10.5 months-NE). In the cEFR, the CNS objective response rate was 76.9% (95% CI, 46.2% to 95.0%) with gefitinib.",
+    "hop_type": "single",
+    "source_abstracts": [
+      {
+        "title": "Rezivertinib in <i>EGFR</i>-Mutated Non-Small Cell Lung Cancer Patients with Central Nervous System Metastasis: Central Nervous System Efficacy from the Phase III REZOR Study.",
+        "bm25_score": 48.037
+      }
+    ]
+  },
+  {
+    "question": "What is the effect of patient education on the development of deep vein thrombosis in patients undergoing orthopedic surgery?",
+    "ground_truth": "The risk of developing DVT was significantly lower in groups that received educational interventions compared to control groups (OR ≈ 0.50, 95% CI: 0.37-0.69, p <0.001). Educational interventions are effective in preventing DVT in orthopedic surgery patients when applied with pharmacological and mechanical methods.",
+    "hop_type": "single",
+    "source_abstracts": [
+      {
+        "title": "The effect of education on deep vein trombosis in patients undergoing orthopedic surgery: a meta-analysis study.",
+        "bm25_score": 53.983
+      }
+    ]
+  },
+  {
+    "question": "What is the known association between transcatheter aortic valve implantation and stroke?",
+    "ground_truth": "Transcatheter aortic valve implantation (TAVI) is associated with procedure-related stroke. Cerebral embolic protection devices (CEPDs) are designed to reduce the risk of embolic debris reaching the brain during TAVI.",
+    "hop_type": "single",
+    "source_abstracts": [
+      {
+        "title": "Cerebral Embolic Protection Devices (CEPDs) During Transcatheter Aortic Valve Implantation (TAVI): A Meta-Analysis of Randomized Controlled Trials.",
+        "bm25_score": 30.97
+      }
+    ]
+  },
+  {
+    "question": "What is the name of the randomized controlled trial that investigated functional near-infrared spectroscopy-guided neurofeedback combined with art therapy and cognitive behavioral therapy for post-stroke depression?",
+    "ground_truth": "The study is described as a multicenter, assessor-blinded randomized controlled trial. The context does not provide a specific name for this trial.",
+    "hop_type": "single",
+    "source_abstracts": [
+      {
+        "title": "Functional near-infrared spectroscopy-guided neurofeedback combined with art therapy and cognitive behavioral therapy for post-stroke depression: A randomized controlled trial.",
+        "bm25_score": 58.961
+      }
+    ]
+  },
+ 
+  {
+    "question": "According to the systematic review on endodontic treatment of teeth with apical periodontitis and cardiovascular risk, what are the confounding factors mentioned that are linked to increased systemic inflammatory burden in the context of apical periodontitis?",
+    "ground_truth": "The confounding factors linked to increased systemic inflammatory burden, as mentioned in the systematic review, are marginal periodontitis and smoking.",
+    "hop_type": "multi",
+    "source_abstracts": [
+      {
+        "title": "Impact of Endodontic Treatment of Teeth With Apical Periodontitis on Levels of Inflammatory Biomarkers Associated With Cardiovascular Risk: A Systematic Review and Meta-Analysis.",
+        "bm25_score": 77.238
+      },
+      {
+        "title": "Are some therapists more effective when they deliver one type of therapy versus another?",
+        "bm25_score": 30.978
+      }
+    ]
+  },
+  {
+    "question": "What does the analysis of scientific production on asthma-COPD overlap syndrome reveal about the current research landscape for this condition compared to separate research on asthma and COPD?",
+    "ground_truth": "The analysis of scientific production on ACO reveals that while research has increased, significant gaps persist regarding therapeutic strategies. The treatment area for ACO remains under development, particularly concerning monoclonal antibodies. In contrast, research on asthma and COPD has been analyzed separately for a longer period.",
+    "hop_type": "multi",
+    "source_abstracts": [
+      {
+        "title": "[Analysis of scientific production on asthma - COPD overlap syndrome].",
+        "bm25_score": 36.307
+      },
+      {
+        "title": "The intellectual landscape of cognitive impairment in type 2 diabetes: knowledge structure, research focuses and rising trends.",
+        "bm25_score": 17.253
+      }
+    ]
+  },
+  {
+    "question": "Based on the provided contexts discussing a systematic review and meta-analysis on direct oral anticoagulants, what was the observed difference in bleeding events between continuous and interrupted DOAC use for minimal bleeding-risk surgical procedures, considering potential selection bias in the findings?",
+    "ground_truth": "Twenty studies examined bleeding events, with a significant reduction in major bleeds favoring continuous DOACs (OR, 0.57; 95% CI, 0.37-0.87; I<sup>2</sup> = 0%), which failed to reach significance in randomized data. No differences were noted in minor bleeding events (OR, 0.93; 95% CI, 0.69-1.24; I<sup>2</sup> = 0%). While the meta-analysis found an improvement, these results were likely subject to selection bias, with no significant differences in all outcomes in high-quality randomized trials.",
+    "hop_type": "multi",
+    "source_abstracts": [
+      {
+        "title": "Continuous vs interrupted direct oral anticoagulants for minimal bleeding-risk surgical procedures-a systematic review and meta-analysis.",
+        "bm25_score": 52.057
+      },
+      {
+        "title": "The lesser the better? A systematic review and meta-analysis of resection strategy in lung neuroendocrine tumors.",
+        "bm25_score": 28.415
+      }
+    ]
+  },
+  {
+    "question": "Does peppermint oil have any relevance in managing hypertension, which in turn could potentially impact the risk of atherosclerotic cardiovascular disease?",
+    "ground_truth": "Yes, peppermint oil supplementation may represent a strategy to support blood pressure reduction in individuals with pre- and stage 1 hypertension. In a trial, adjusted systolic blood pressure was significantly lower in the peppermint group compared to the placebo group. Hypertension is a predominant risk factor for cardiovascular disease morbidity and mortality.",
+    "hop_type": "multi",
+    "source_abstracts": [
+      {
+        "title": "Effects of peppermint (Mentha x piperita L.) oil on cardiometabolic outcomes in patients with pre- and stage 1 hypertension: A placebo randomized controlled trial.",
+        "bm25_score": 24.136
+      },
+      {
+        "title": "Risk factors for atherosclerotic cardiovascular disease in individuals with heterozygous familial hypercholesterolemia: a systematic review and meta-analysis.",
+        "bm25_score": 15.361
+      }
+    ]
+  },
+  {
+    "question": "In the context of Type 2 diabetes mellitus, how does the efficacy of a fixed-dose combination including glimepiride, voglibose, and extended-release metformin compare to other metformin combinations, given that hyperglycemia is a characteristic symptom?",
+    "ground_truth": "In adult patients with Type 2 diabetes mellitus inadequately controlled on metformin, GLIME+VOGLI+MET-ER demonstrated superior HbA1c reduction compared with VOGLI+MET and GLIME+MET at Weeks 12 and 24. The mean change in % HbA1c was significantly more with GLIME+VOGLI+MET-ER versus VOGLI+MET and GLIME+MET at Week 12 and Week 24.",
+    "hop_type": "multi",
+    "source_abstracts": [
+      {
+        "title": "Efficacy and Safety of Glimepiride, Voglibose, and Metformin ER in Type 2 Diabetes: A Randomized, Active-Controlled Study.",
+        "bm25_score": 58.118
+      },
+      {
+        "title": "Are some therapists more effective when they deliver one type of therapy versus another?",
+        "bm25_score": 31.196
+      }
+    ]
+  },
+  {
+    "question": "What was the reported difference in systolic blood pressure at 20 days between the trial arm and placebo, given that the trial enrolled patients with systolic blood pressure between 130 and 160 mm Hg?",
+    "ground_truth": "The adjusted systolic blood pressure at 20 days was significantly lower by -8.48 mmHg in the peppermint trial arm compared to placebo. The 95% confidence interval was -14.24 to -2.73, with an effect size of -0.94.",
+    "hop_type": "multi",
+    "source_abstracts": [
+      {
+        "title": "Effects of peppermint (Mentha x piperita L.) oil on cardiometabolic outcomes in patients with pre- and stage 1 hypertension: A placebo randomized controlled trial.",
+        "bm25_score": 35.781
+      },
+      {
+        "title": "Three Low-Dose Antihypertensive Agents in a Single Pill after Intracerebral Hemorrhage.",
+        "bm25_score": 23.858
+      }
+    ]
+  },
+
+  {
+    "question": "According to the provided contexts, what are the general and specific factors associated with depressive disorders in people living with HIV, considering both the broader impacts on their lives and the specific demographic and clinical characteristics linked to the condition?",
+    "ground_truth": "Depressive disorders among people living with HIV (PLWH) severely impair quality of life and antiretroviral therapy (ART) adherence. Factors associated with depressive disorders in PLWH include HIV stigma, low CD4<sup>+</sup> T-cell counts, and ART-related side effects. Specific factors linked to depressive disorders in PLWH were race, alcohol abuse, higher baseline and current CD4<sup>+</sup> T-cell count, and longer HIV diagnosis duration (P ≤ 0.001).",
+    "hop_type": "multi",
+    "source_abstracts": [
+      {
+        "title": "Prevalence and associated factors of ICD/DSM-diagnosed depressive disorders among people living with HIV: A systematic review and meta-analysis.",
+        "bm25_score": 38.469
+      },
+      {
+        "title": "The Efficacy of Transdiagnostic Cognitive Behavioral Therapy Compared to a Waitlist Control for Emotional Disorders in Adolescents: A Meta-Analysis of Randomized Controlled Trials.",
+        "bm25_score": 14.433
+      }
+    ]
+  },
+  {
+    "question": "According to the review, what is a proposed mechanism by which fructose exposure might contribute to pediatric atopic disease, and how do epidemiologic findings on this link vary?",
+    "ground_truth": "Proposed mechanisms include gut dysbiosis, impaired epithelial barrier integrity in the gut and airways, metabolic endotoxemia, and amplification of type 2 immune responses. Epidemiologic findings linking fructose intake with asthma and atopic disorders remain heterogeneous, with some studies showing modest to moderate associations and others showing stronger associations with two- to five-fold higher odds of asthma.",
+    "hop_type": "multi",
+    "source_abstracts": [
+      {
+        "title": "Fructose-Containing Dietary Exposures and Pediatric Atopic Disease: A Review of Epidemiologic Evidence.",
+        "bm25_score": 39.664
+      },
+      {
+        "title": "Subcutaneous immunotherapy with house dust mite extract in Indonesian children with allergic rhinitis and asthma: A double-blind randomized controlled trial.",
+        "bm25_score": 10.598
+      }
+    ]
+  },
+  {
+    "question": "According to the provided contexts, what is the effect of antenatal psychological interventions on postpartum depression outcomes and incidence rates in pregnant women?",
+    "ground_truth": "Antenatal psychological interventions significantly reduced postpartum depression-related scale scores and incidence rates. The incidence rate of postpartum depression in the intervention group was significantly reduced with an odds ratio (OR) of 0.73 (95% CI [0.57-0.95], P=0.02). Scores on the EPDS, PHQ-9, PSS-10, and STAI were also lower in the intervention group.",
+    "hop_type": "multi",
+    "source_abstracts": [
+      {
+        "title": "Antenatal psychological interventions may ameliorate postpartum depression: a systematic review and meta-analysis.",
+        "bm25_score": 37.095
+      },
+      {
+        "title": "Breastfeeding in Women with Postpartum Depression: A Systematic Review and Meta-Analysis.",
+        "bm25_score": 16.746
+      }
+    ]
+  },
+  {
+    "question": "What is the primary therapeutic goal of the randomized controlled trial investigating Huangqi Guizhi Wuwu Decoction in non-small cell lung cancer patients with leptomeningeal metastases undergoing intrathecal Pemetrexed chemotherapy, given the limitations of this treatment?",
+    "ground_truth": "The primary therapeutic goal of the randomized controlled trial is to investigate the efficacy and safety of Huangqi Guizhi Wuwu decoction (HGWD) in mitigating neurotoxicity induced by intrathecal Pemetrexed chemotherapy in NSCLC patients with LM. The study aims to determine if HGWD can reduce the incidence and grade of neurotoxicity, improve chemotherapy tolerance, and prolong survival benefits, while assessing its safety profile.",
+    "hop_type": "multi",
+    "source_abstracts": [
+      {
+        "title": "[Huangqi Guizhi Wuwu Decoction in the Treatment of Pemetrexed Intrathecal Chemotherapy-induced Neurotoxicity in NSCLC Patients with Leptomeningeal Metastases: A Randomized Controlled Trial].",
+        "bm25_score": 36.53
+      },
+      {
+        "title": "The Promise of Chemotherapy-Free Strategies in Advanced Driver-Negative NSCLC: A Systematic Review and Network Meta-Analysis of Antiangiogenic Combination Therapies.",
+        "bm25_score": 24.164
+      }
+    ]
+  },
+  {
+    "question": "Considering the efficacy and safety of novel antidiabetic drugs for type 2 diabetes and chronic kidney disease as detailed in the network meta-analysis, how do glucagon-like peptide-1 receptor agonists contribute to the management of diabetic kidney disease, and what does emerging evidence suggest about their combination therapy?",
+    "ground_truth": "Glucagon-like peptide-1 receptor agonists (GLP-1RAs) are novel antidiabetic drugs that confer renoprotection in patients with diabetic kidney disease. Emerging evidence suggests that combination therapy with GLP-1RAs and sodium-glucose cotransporter-2 inhibitors (SGLT2is) has synergistic benefits, providing superior renoprotection compared to monotherapy in patients with type 2 diabetes and albuminuria. This combination therapy significantly reduced the urinary albumin-to-creatinine ratio (UACR) compared with monotherapy.",
+    "hop_type": "multi",
+    "source_abstracts": [
+      {
+        "title": "Efficacy and safety of novel antidiabetic drugs in patients with type 2 diabetes and chronic kidney disease: a network meta-analysis.",
+        "bm25_score": 23.207
+      },
+      {
+        "title": "Beyond Monotherapy: The Superior Efficacy of Combined GLP-1 Receptor Agonist and SGLT2 Inhibitors on Renal Biomarkers: A Systematic Review and Meta-Analysis.",
+        "bm25_score": 21.02
+      }
+    ]
+  },
+  {
+    "question": "Considering the potential for amplified immune-related adverse events when immune checkpoint inhibitors are used concurrently with other medications, as highlighted in the case report and literature review, what specific drug-induced adverse events are suggested to be exacerbated by this combination?",
+    "ground_truth": "Drug-induced liver injury (DILI) and Stevens-Johnson syndrome/toxic epidermal necrolysis (SJS/TEN) may be amplified when immune checkpoint inhibitors are combined with other medications. Moxifloxacin is an uncommon culprit that can precipitate acute DILI and TEN.",
+    "hop_type": "multi",
+    "source_abstracts": [
+      {
+        "title": "Concurrent moxifloxacin-induced liver injury and toxic epidermal necrolysis after immune checkpoint inhibition: a case report and literature review.",
+        "bm25_score": 29.081
+      },
+      {
+        "title": "The Promise of Chemotherapy-Free Strategies in Advanced Driver-Negative NSCLC: A Systematic Review and Network Meta-Analysis of Antiangiogenic Combination Therapies.",
+        "bm25_score": 14.352
+      }
+    ]
+  },
+  {
+    "question": "In the randomized controlled trial exploring the effectiveness of functional near-infrared spectroscopy-guided neurofeedback combined with art therapy and cognitive behavioral therapy for post-stroke depression, what were the secondary outcome measures related to inflammatory markers, specifically concerning TNF-alpha levels?",
+    "ground_truth": "Secondary outcomes included changes in serum IL-6 and TNF-α levels. Reductions in IL-6 and TNF-α were significantly larger in the NF-AT+CBT group (both P < 0.001).",
+    "hop_type": "multi",
+    "source_abstracts": [
+      {
+        "title": "Functional near-infrared spectroscopy-guided neurofeedback combined with art therapy and cognitive behavioral therapy for post-stroke depression: A randomized controlled trial.",
+        "bm25_score": 38.869
+      },
+      {
+        "title": "A secondary head-to-head comparison of low-intensity focused ultrasound and repetitive transcranial magnetic stimulation for motor recovery after stroke.",
+        "bm25_score": 17.125
+      }
+    ]
+  },
+  {
+    "question": "In the context of Type 2 diabetes mellitus and its management, how does the study investigating Glimepiride, Voglibose, and Metformin ER relate to changes in HbA1c levels, considering the prevalence of T2DM in India and the general characteristics of the disease?",
+    "ground_truth": "India has approximately 89 million individuals living with Type 2 diabetes mellitus (T2DM). In a study comparing fixed-dose combination of glimepiride, voglibose, and extended-release metformin (GLIME+VOGLI+MET-ER) with voglibose and metformin (VOGLI+MET) and glimepiride and metformin (GLIME+MET) in patients poorly controlled with metformin, all treatments showed a significant reduction in HbA1c. The mean change in HbA1c was significantly greater with GLIME+VOGLI+MET-ER compared to VOGLI+MET and GLIME+MET at Weeks 12 and 24.",
+    "hop_type": "multi",
+    "source_abstracts": [
+      {
+        "title": "Efficacy and Safety of Glimepiride, Voglibose, and Metformin ER in Type 2 Diabetes: A Randomized, Active-Controlled Study.",
+        "bm25_score": 26.019
+      },
+      {
+        "title": "Prevalence of respiratory viruses in stable and acute asthma: a systematic review and meta-analysis.",
+        "bm25_score": 13.703
+      }
+    ]
+  },
+
+
+  
+  {
+    "question": "In adult patients with Type 2 Diabetes Mellitus inadequately controlled on metformin monotherapy, what was the observed superiority of the fixed-dose combination of glimepiride, voglibose, and extended-release metformin compared to other combinations in reducing hyperglycemia?",
+    "ground_truth": "GLIME+VOGLI+MET-ER demonstrated superior HbA1c reduction compared to VOGLI+MET and GLIME+MET at Weeks 12 and 24. At Week 12, the mean change in % HbA1c was -1.02 ± 0.60 for GLIME+VOGLI+MET-ER versus -0.68 ± 0.64 for VOGLI+MET (p < 0.001) and -0.88 ± 0.49 for GLIME+MET (p = 0.0154). At Week 24, it was -1.57 ± 0.74 versus -1.11 ± 0.80 (p < 0.001) and -1.28 ± 0.60 (p = 0.0002) respectively.",
+    "hop_type": "multi",
+    "source_abstracts": [
+      {
+        "title": "Efficacy and Safety of Glimepiride, Voglibose, and Metformin ER in Type 2 Diabetes: A Randomized, Active-Controlled Study.",
+        "bm25_score": 67.098
+      },
+      {
+        "title": "Efficacy and safety of novel antidiabetic drugs in patients with type 2 diabetes and chronic kidney disease: a network meta-analysis.",
+        "bm25_score": 20.239
+      }
+    ]
+  },
+  {
+    "question": "What are the benefits of psychosocial interventions that treat borderline personality disorder, psychosis, and mental illness, and how are they associated with patient engagement?",
+    "ground_truth": "Complex psychosocial interventions are strongly supported for early psychosis, with benefits including reductions in relapse and improvements in psychosocial functioning. For early borderline personality disorder (BPD) and first-episode mental illness in general (FEMI), preliminary data suggest consistent benefits for engagement. However, further rigorous trials are required to confirm these benefits.",
+    "hop_type": "aggregative",
+    "source_abstracts": [
+      {
+        "title": "A systematic review of specialized psychosocial and complex psychosocial interventions for early psychosis, early depression, early bipolar disorder, and early borderline personality disorder.",
+        "bm25_score": 49.147
+      },
+      {
+        "title": "Are some therapists more effective when they deliver one type of therapy versus another?",
+        "bm25_score": 34.003
+      },
+      {
+        "title": "Antenatal psychological interventions may ameliorate postpartum depression: a systematic review and meta-analysis.",
+        "bm25_score": 20.759
+      },
+      {
+        "title": "The effect of education on deep vein trombosis in patients undergoing orthopedic surgery: a meta-analysis study.",
+        "bm25_score": 17.447
+      },
+      {
+        "title": "Breastfeeding in Women with Postpartum Depression: A Systematic Review and Meta-Analysis.",
+        "bm25_score": 17.161
+      }
+    ]
+  },
+  {
+    "question": "What are the symptoms and associated biological markers that are monitored when assessing post-stroke depression?",
+    "ground_truth": "Post-stroke depression (PSD) is a complication that impairs recovery, and its assessment can include changes in Hamilton Depression Rating Scale-17 (HAMD-17) scores, as well as serum IL-6 and TNF-α levels. These inflammatory markers, IL-6 and TNF-α, showed significant reductions in the enhanced treatment group compared to standard treatment.",
+    "hop_type": "aggregative",
+    "source_abstracts": [
+      {
+        "title": "Functional near-infrared spectroscopy-guided neurofeedback combined with art therapy and cognitive behavioral therapy for post-stroke depression: A randomized controlled trial.",
+        "bm25_score": 14.597
+      },
+      {
+        "title": "Are some therapists more effective when they deliver one type of therapy versus another?",
+        "bm25_score": 13.908
+      },
+      {
+        "title": "Inflammatory markers and electroconvulsive therapy-related cognitive outcomes in Depressive Disorders: A systematic review.",
+        "bm25_score": 11.445
+      },
+      {
+        "title": "Sex differences in glycemic outcomes: a systematic review and meta-analysis of diabetes treatments.",
+        "bm25_score": 11.152
+      },
+      {
+        "title": "Factors associated with wheezing in Indigenous children and adolescents: A systematic review of the global literature.",
+        "bm25_score": 10.284
+      }
+    ]
+  },
+  {
+    "question": "What conditions do glucagon-like peptide-1 receptor agonists treat, and what risk factor are they associated with, according to the provided text?",
+    "ground_truth": "Glucagon-like peptide-1 receptor agonists (GLP-1RAs) confer renoprotection and are used in combination therapy for diabetic kidney disease (DKD) in patients with type 2 diabetes, albuminuria, and high cardiorenal risk. They have also been studied for their efficacy and safety in patients with type 2 diabetes mellitus (T2DM) and comorbid chronic kidney disease (CKD).",
+    "hop_type": "aggregative",
+    "source_abstracts": [
+      {
+        "title": "Beyond Monotherapy: The Superior Efficacy of Combined GLP-1 Receptor Agonist and SGLT2 Inhibitors on Renal Biomarkers: A Systematic Review and Meta-Analysis.",
+        "bm25_score": 23.284
+      },
+      {
+        "title": "Efficacy and safety of novel antidiabetic drugs in patients with type 2 diabetes and chronic kidney disease: a network meta-analysis.",
+        "bm25_score": 19.807
+      },
+      {
+        "title": "Are some therapists more effective when they deliver one type of therapy versus another?",
+        "bm25_score": 18.577
+      },
+      {
+        "title": "Effect of Huiyang Shengji unguent on the NOD-like receptor family pyrin domain containing protein 3/caspase1/ gasdermin D pathway and lymphatic angiogenesis in patients with diabetic foot ulcer.",
+        "bm25_score": 15.7
+      },
+      {
+        "title": "Vitamin D Receptor Polymorphisms and the Effect of Vitamin D Supplementation on Diabetes Risk Among Adults With Prediabetes.",
+        "bm25_score": 12.214
+      }
+    ]
+  },
+  {
+    "question": "What are the key terms mentioned in relation to cognitive impairment in type 2 diabetes, including other specific neurological conditions and the general phenomenon of cognitive dysfunction?",
+    "ground_truth": "In relation to cognitive impairment in type 2 diabetes, key terms include \"cognitive dysfunction,\" \"Alzheimer's disease,\" and \"cognitive impairment.\" The research also investigates \"neurodegeneration biomarkers\" like neurofilament light chain (NfL), phosphorylated tau217 (p-tau217), and glial fibrillary acidic protein (GFAP).",
+    "hop_type": "aggregative",
+    "source_abstracts": [
+      {
+        "title": "Inflammatory markers and electroconvulsive therapy-related cognitive outcomes in Depressive Disorders: A systematic review.",
+        "bm25_score": 30.961
+      },
+      {
+        "title": "The intellectual landscape of cognitive impairment in type 2 diabetes: knowledge structure, research focuses and rising trends.",
+        "bm25_score": 28.721
+      },
+      {
+        "title": "Prognostic Value of Cardiac Strain in Cognitive Impairment: A Systematic Review.",
+        "bm25_score": 27.005
+      },
+      {
+        "title": "The Effect of Progressive Relaxation Exercises Applied to Individuals With Type 2 Diabetes on FATIQUE Level and Sleep Quality: A Randomised Controlled Study.",
+        "bm25_score": 22.927
+      },
+      {
+        "title": "Dulaglutide and neurodegeneration biomarkers: REWIND post hoc analysis.",
+        "bm25_score": 22.689
+      }
+    ]
+  },
+  {
+    "question": "What are the potential adverse events associated with immune checkpoint inhibitors, and what serious conditions do they treat?",
+    "ground_truth": "Immune checkpoint inhibitors (ICIs) are associated with immune-related adverse events (irAEs) [Source 1]. When ICIs are combined with other medications, the risk of drug-induced liver injury (DILI) and Stevens-Johnson syndrome/toxic epidermal necrolysis (SJS/TEN) may be amplified [Source 1]. ICIs are used in the treatment of advanced driver-negative non-small cell lung cancer (NSCLC) [Source 3].",
+    "hop_type": "aggregative",
+    "source_abstracts": [
+      {
+        "title": "Concurrent moxifloxacin-induced liver injury and toxic epidermal necrolysis after immune checkpoint inhibition: a case report and literature review.",
+        "bm25_score": 19.29
+      },
+      {
+        "title": "Are some therapists more effective when they deliver one type of therapy versus another?",
+        "bm25_score": 18.789
+      },
+      {
+        "title": "The Promise of Chemotherapy-Free Strategies in Advanced Driver-Negative NSCLC: A Systematic Review and Network Meta-Analysis of Antiangiogenic Combination Therapies.",
+        "bm25_score": 15.436
+      },
+      {
+        "title": "Three Low-Dose Antihypertensive Agents in a Single Pill after Intracerebral Hemorrhage.",
+        "bm25_score": 14.29
+      },
+      {
+        "title": "Longitudinal Analysis of Peripheral Blood CD4+ T-Cell Profiles and Clinical Outcomes in Metastatic Non-Small-Cell Lung Cancer Patients Following Bronchoscopic Cryotherapy and Pembrolizumab-Based Therapy.",
+        "bm25_score": 13.146
+      }
+    ]
+  },
+  {
+    "question": "What is the association between magnesium levels and diabetic retinopathy in type 2 diabetes, and what is the certainty of this evidence?",
+    "ground_truth": "Magnesium levels are significantly lower in patients with diabetic retinopathy compared to diabetic controls without retinopathy [SMD = -1.19, 95% CI (-1.68; -0.70); p < 0.0001; I<sup>2</sup> = 95%]. The certainty of this evidence is rated as low certainty.",
+    "hop_type": "aggregative",
+    "source_abstracts": [
+      {
+        "title": "Association Between Levels of Magnesium and Diabetic Retinopathy in Diabetic Patients with Type 2 Diabetes Mellitus: An Updated Systematic Review and Meta-Analysis.",
+        "bm25_score": 50.011
+      },
+      {
+        "title": "The Effect of Progressive Relaxation Exercises Applied to Individuals With Type 2 Diabetes on FATIQUE Level and Sleep Quality: A Randomised Controlled Study.",
+        "bm25_score": 26.079
+      },
+      {
+        "title": "Assessing the Role of Statins as an Adjunctive Anti-VEGF Therapy for Clinically Significant Macular Edema (CSME) in Type 2 Diabetes Mellitus.",
+        "bm25_score": 25.5
+      },
+      {
+        "title": "Are some therapists more effective when they deliver one type of therapy versus another?",
+        "bm25_score": 24.955
+      },
+      {
+        "title": "Sex differences in glycemic outcomes: a systematic review and meta-analysis of diabetes treatments.",
+        "bm25_score": 24.682
+      }
+    ]
+  },
+  {
+    "question": "What were the overall effects of probiotic supplementation on patients with substance-induced depressive disorder, considering their impact on depressive symptoms, anxiety, and inflammatory markers?",
+    "ground_truth": "In a four-week randomized, double-blind, placebo-controlled trial involving 40 patients with substance-induced depressive disorder, both probiotic and placebo groups showed statistically significant improvements in depressive and anxiety symptoms. No differences were found between the two groups regarding these symptoms. Immunologic outcomes revealed suggestive changes in IL6 and INFG levels in the probiotic group compared to the placebo group, indicating potential immune-modulating effects.",
+    "hop_type": "aggregative",
+    "source_abstracts": [
+      {
+        "title": "Effect of probiotic supplement on improvement of depressive symptoms in patients with substance-induced depressive disorder: a randomized, double-blind, placebo-controlled clinical trial.",
+        "bm25_score": 42.978
+      },
+      {
+        "title": "The Efficacy of Transdiagnostic Cognitive Behavioral Therapy Compared to a Waitlist Control for Emotional Disorders in Adolescents: A Meta-Analysis of Randomized Controlled Trials.",
+        "bm25_score": 27.121
+      },
+      {
+        "title": "[Boosting oxytocin in postpartum depression].",
+        "bm25_score": 24.001
+      },
+      {
+        "title": "Antenatal psychological interventions may ameliorate postpartum depression: a systematic review and meta-analysis.",
+        "bm25_score": 23.148
+      },
+      {
+        "title": "Efficacy and safety of accelerated transcranial magnetic stimulation on suicidality in depressive disorders: A systematic review and meta-analysis.",
+        "bm25_score": 21.158
+      }
+    ]
+  },
+  {
+    "question": "What factors were associated with low-dose CT uptake for lung cancer screening among high-risk populations, according to this systematic review and meta-analysis, and how did these factors influence the outcomes?",
+    "ground_truth": "In high-risk populations undergoing lung cancer screening, female sex was positively associated with low-dose CT (LDCT) uptake, while current tobacco use was negatively associated. In single-arm studies, nurse-led shared decision-making (SDM) programmes achieved a pooled LDCT uptake rate of 98% and a willingness to participate of 68%. In comparative studies, nurse-led SDM showed no significant difference in LDCT uptake compared with usual care.",
+    "hop_type": "aggregative",
+    "source_abstracts": [
+      {
+        "title": "Effects of nurse-led shared decision-making on low-dose CT uptake and screening outcomes in high-risk populations: a systematic review and meta-analysis.",
+        "bm25_score": 49.449
+      },
+      {
+        "title": "Significant Incidental Findings in the National Lung Screening Trial and Diagnosis of Extrapulmonary Cancer.",
+        "bm25_score": 32.826
+      },
+      {
+        "title": "Risk factors for atherosclerotic cardiovascular disease in individuals with heterozygous familial hypercholesterolemia: a systematic review and meta-analysis.",
+        "bm25_score": 29.305
+      },
+      {
+        "title": "Factors associated with wheezing in Indigenous children and adolescents: A systematic review of the global literature.",
+        "bm25_score": 28.352
+      },
+      {
+        "title": "Accuracy of Radiomics-Based Machine Learning for Predicting Risk of Recurrence in Non-Small Cell Lung Cancer: Systematic Review and Meta-Analysis.",
+        "bm25_score": 25.022
+      }
+    ]
+  },
+  {
+    "question": "What are the comparative efficacy and cognitive safety profiles of Magnetic Seizure Therapy (MST) versus right unilateral ultra-brief electroconvulsive therapy (RUL-UB ECT) for patients with depression and major depressive disorder, as indicated by their respective primary outcomes?",
+    "ground_truth": "In the CREST-MST trial, MST showed non-inferior efficacy to RUL-UB ECT in achieving depression remission, with a remission rate of 22.5% for MST compared to 27.8% for RUL-UB ECT, a difference of 5.3% in favor of RUL-UB ECT. MST also demonstrated a more favorable cognitive safety profile, with 2.7% of MST participants experiencing worsening autobiographical memory compared to 17.3% of RUL-UB ECT participants.",
+    "hop_type": "aggregative",
+    "source_abstracts": [
+      {
+        "title": "Confirmatory efficacy and safety trial of magnetic seizure therapy versus right unilateral ultra-brief electroconvulsive therapy in depression (CREST-MST): a randomised, double-blind, non-inferiority trial in Canada and the USA.",
+        "bm25_score": 68.715
+      },
+      {
+        "title": "Are some therapists more effective when they deliver one type of therapy versus another?",
+        "bm25_score": 28.725
+      },
+      {
+        "title": "Inflammatory markers and electroconvulsive therapy-related cognitive outcomes in Depressive Disorders: A systematic review.",
+        "bm25_score": 28.033
+      },
+      {
+        "title": "The Efficacy of Transdiagnostic Cognitive Behavioral Therapy Compared to a Waitlist Control for Emotional Disorders in Adolescents: A Meta-Analysis of Randomized Controlled Trials.",
+        "bm25_score": 27.965
+      },
+      {
+        "title": "Efficacy differences of acute-phase strategies for adult depression: A comprehensive network meta-analysis based on evidence from 2019 to 2024.",
+        "bm25_score": 24.794
+      }
+    ]
+  },
+  {
+    "question": "What is the breakdown of algorithms identified in the systematic review for identifying asthma patients, specifically in terms of those identifying general asthma, asthma exacerbations, and those characterizing asthma severity or control?",
+    "ground_truth": "Of the 471 algorithms identified, 266 (56.5%) identified asthma patients without details regarding severity or control, 41 (8.7%) identified asthma exacerbations, and 99 (21.0%) characterized asthma severity or control.",
+    "hop_type": "aggregative",
+    "source_abstracts": [
+      {
+        "title": "Algorithms for the identification of asthma patients in healthcare administrative databases: A systematic review.",
+        "bm25_score": 64.748
+      },
+      {
+        "title": "Safety of Performing Spirometry During Pregnancy: A Systematic Review.",
+        "bm25_score": 31.074
+      },
+      {
+        "title": "IMPlementing IMProved Asthma self-management as RouTine (IMP2ART) in UK primary care: An internal pilot for a cluster randomised controlled trial.",
+        "bm25_score": 30.451
+      },
+      {
+        "title": "[Effect of acupuncture based on the theory of \"exterior-interior relationship between lung and large intestine\" on acute exacerbation of bronchial asthma].",
+        "bm25_score": 28.149
+      },
+      {
+        "title": "[Effect of modified painless wheat-grain blistering moxibustion on cough variant asthma of wind cold attacking the lung: a randomized controlled trial].",
+        "bm25_score": 27.726
+      }
+    ]
+  },
+
+  {
+    "question": "What are the combined therapeutic benefits of sodium-glucose cotransporter-2 inhibitors, specifically in relation to treating chronic conditions and mortality?",
+    "ground_truth": "Sodium-glucose cotransporter-2 (SGLT2) inhibitors offer glucose-lowering, cardio-protective, and reno-protective properties. They significantly reduced all-cause mortality up to one year (RR = 0.89, 95% CI [0.80-0.99], p = 0.03) and beyond one year (RR = 0.89, 95% CI [0.85-0.94], p < 0.0001), particularly among patients with chronic heart failure, chronic kidney disease, and diabetes mellitus with established cardiovascular disease. Cardiovascular mortality was also significantly reduced overall (RR = 0.88, 95% CI [0.84-0.94], p < 0.0001).",
+    "hop_type": "aggregative",
+    "source_abstracts": [
+      {
+        "title": "Beyond Monotherapy: The Superior Efficacy of Combined GLP-1 Receptor Agonist and SGLT2 Inhibitors on Renal Biomarkers: A Systematic Review and Meta-Analysis.",
+        "bm25_score": 21.752
+      },
+      {
+        "title": "Impact of SGLT2 Inhibitors on Mortality Across Different Populations: A Systematic Review and Meta-Analysis.",
+        "bm25_score": 19.783
+      },
+      {
+        "title": "The Efficacy of Transdiagnostic Cognitive Behavioral Therapy Compared to a Waitlist Control for Emotional Disorders in Adolescents: A Meta-Analysis of Randomized Controlled Trials.",
+        "bm25_score": 18.99
+      },
+      {
+        "title": "Efficacy and safety of novel antidiabetic drugs in patients with type 2 diabetes and chronic kidney disease: a network meta-analysis.",
+        "bm25_score": 18.24
+      },
+      {
+        "title": "Effects of Garcinia mangostana Peel Extract on Glycemic Control in Type 2 Diabetes Mellitus: A Systematic Review of Human Studies.",
+        "bm25_score": 15.76
+      }
+    ]
+  },
+  {
+    "question": "What are the cognitive conditions and biomarkers that dulaglutide is associated with, and does it show a treatment effect for any of them?",
+    "ground_truth": "Dulaglutide has been associated with substantive cognitive impairment (SCI) and Alzheimer's disease and related dementia (ADRD) biomarkers. In participants with elevated phosphorylated tau217 (p-tau217) ≥25 pg/mL, dulaglutide was associated with a reduction in SCI (hazard ratio = 0.78; p = 0.0064).",
+    "hop_type": "aggregative",
+    "source_abstracts": [
+      {
+        "title": "Safety of Performing Spirometry During Pregnancy: A Systematic Review.",
+        "bm25_score": 22.515
+      },
+      {
+        "title": "Dulaglutide and neurodegeneration biomarkers: REWIND post hoc analysis.",
+        "bm25_score": 22.47
+      },
+      {
+        "title": "Inflammatory markers and electroconvulsive therapy-related cognitive outcomes in Depressive Disorders: A systematic review.",
+        "bm25_score": 21.825
+      },
+      {
+        "title": "Impact of Endodontic Treatment of Teeth With Apical Periodontitis on Levels of Inflammatory Biomarkers Associated With Cardiovascular Risk: A Systematic Review and Meta-Analysis.",
+        "bm25_score": 20.702
+      },
+      {
+        "title": "Efficacy and safety of accelerated transcranial magnetic stimulation on suicidality in depressive disorders: A systematic review and meta-analysis.",
+        "bm25_score": 20.225
+      }
+    ]
+  },
+  {
+    "question": "What is the therapeutic relationship between Benzodiazepines (BZDs) and Cognitive Behavioral Therapy (CBT) in the treatment of depression, and how does this compare to monotherapy approaches?",
+    "ground_truth": "Combining psychotherapy (CBT) and pharmacotherapy (SSRIs/BZDs) significantly outperformed corresponding monotherapies for adult depression, showing a synergistic enhancement rather than just an additive effect. The response rate for SSRIs/BZDs combined with CBT was significantly higher than for CBT monotherapy or SSRIs/BZDs monotherapy.",
+    "hop_type": "aggregative",
+    "source_abstracts": [
+      {
+        "title": "Functional near-infrared spectroscopy-guided neurofeedback combined with art therapy and cognitive behavioral therapy for post-stroke depression: A randomized controlled trial.",
+        "bm25_score": 32.181
+      },
+      {
+        "title": "The Efficacy of Transdiagnostic Cognitive Behavioral Therapy Compared to a Waitlist Control for Emotional Disorders in Adolescents: A Meta-Analysis of Randomized Controlled Trials.",
+        "bm25_score": 30.67
+      },
+      {
+        "title": "Efficacy differences of acute-phase strategies for adult depression: A comprehensive network meta-analysis based on evidence from 2019 to 2024.",
+        "bm25_score": 30.427
+      },
+      {
+        "title": "Inflammatory markers and electroconvulsive therapy-related cognitive outcomes in Depressive Disorders: A systematic review.",
+        "bm25_score": 27.61
+      },
+      {
+        "title": "Are some therapists more effective when they deliver one type of therapy versus another?",
+        "bm25_score": 25.594
+      }
+    ]
+  },
+  {
+    "question": "According to the systematic review on direct oral anticoagulants in pediatric patients, which outcomes showed no statistically significant difference between DOACs and standard of care?",
+    "ground_truth": "No significant differences were found in all-cause mortality and serious adverse events between DOACs and standard of care.",
+    "hop_type": "single",
+    "source_abstracts": [
+      {
+        "title": "Efficacy and safety of direct oral anticoagulants in pediatric patients: a systematic review and meta-analysis.",
+        "bm25_score": 44.326
+      }
+    ]
+  },
+
+  {
+    "question": "Considering that immune checkpoint inhibitors amplify T-cell-mediated drug responses, what concurrent medication use is implicitly contraindicated based on the case report involving moxifloxacin?",
+    "ground_truth": "While the case report indicates that prior immunotherapy may have amplified T-cell-mediated, drug-induced immune responses, leading to severe DILI and TEN after moxifloxacin treatment, it does not explicitly state a contraindication for any concurrent medication. The report suggests caution when prescribing fluoroquinolones to patients receiving or having recently received immunotherapy.",
+    "hop_type": "multi",
+    "source_abstracts": [
+      {
+        "title": "Concurrent moxifloxacin-induced liver injury and toxic epidermal necrolysis after immune checkpoint inhibition: a case report and literature review.",
+        "bm25_score": 18.86
+      },
+      {
+        "title": "Systematic review of the efficacy and safety of biologically and tissue-derived therapies for the treatment of diabetic foot.",
+        "bm25_score": 13.303
+      }
+    ]
+  },
+
+  {
+    "question": "According to the systematic review on asthma management during pregnancy, what is the inconsistency in findings regarding whether asthma exacerbations are associated with pre-eclampsia and low birth weight?",
+    "ground_truth": "The studies revealed that while asthma exacerbations and uncontrolled asthma during pregnancy were associated with an increased risk of pre-eclampsia, they did not consistently suggest an increased risk of low birth weight.",
+    "hop_type": "multi",
+    "source_abstracts": [
+      {
+        "title": "Asthma Control During Pregnancy and Adverse Perinatal Outcomes: A Systematic Review.",
+        "bm25_score": 16.49
+      },
+      {
+        "title": "Safety of Performing Spirometry During Pregnancy: A Systematic Review.",
+        "bm25_score": 11.016
+      }
+    ]
+  },
+  {
+    "question": "What are the three specific plasma biomarkers — including their abbreviated forms — measured to assess Alzheimer's disease and related dementia risk in the dulaglutide REWIND trial analysis?",
+    "ground_truth": "The three specific plasma biomarkers measured were plasma neurofilament light chain (NfL), phosphorylated tau217 (p-tau217), and glial fibrillary acidic protein (GFAP).",
+    "hop_type": "single",
+    "source_abstracts": [
+      {
+        "title": "Dulaglutide and neurodegeneration biomarkers: REWIND post hoc analysis.",
+        "bm25_score": 39.993
+      }
+    ]
+  },
+  {
+    "question": "In the systematic review on respiratory viruses in acute asthma, what was the exact percentage prevalence of rhinovirus in adults compared to children, and what was the absolute difference between these two figures?",
+    "ground_truth": "Rhinovirus was identified in 45.0% of children with acute asthma versus 21.2% in adults with acute asthma. The absolute difference between these two figures is 23.8%.",
+    "hop_type": "single",
+    "source_abstracts": [
+      {
+        "title": "Prevalence of respiratory viruses in stable and acute asthma: a systematic review and meta-analysis.",
+        "bm25_score": 62.063
+      }
+    ]
+  }
+]
