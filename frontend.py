@@ -9,25 +9,24 @@ st.title("HealthRAG Evaluation")
 # ---- Inputs ----
 questions = [
 "What is the study about regarding Huangqi Guizhi Wuwu decoction and intrathecal Pemetrexed chemotherapy?",
-"Another sample question about a different topic.",
 "What is the efficacy and safety of direct oral anticoagulants compared to heparin in pediatric patients, according to the systematic review and meta-analysis?",
 "Does the systematic review and meta-analysis titled 'Antenatal psychological interventions may ameliorate postpartum depression' mention mindfulness as a type of prenatal psychological intervention?",
 "What is the relationship between postpartum depression and breastfeeding?",
 "What medical databases were searched in the systematic review and meta-analysis titled 'Effects of Transcranial Magnetic Stimulation on Patients with Major Depressive Disorder'?",
-"What is the name of the study that assessed the safety and tolerability of beclometasone dipropionate/formoterol fumarate/glycopyrronium with the HFA-152a propellant?",
+#"What is the title of the paper that assessed the safety and tolerability of beclometasone dipropionate/formoterol fumarate/glycopyrronium with the HFA-152a propellant?",
 "What medical concepts were searched for in the meta-analysis study on the effect of education on deep vein thrombosis in orthopedic surgery patients?",
 "What are the primary outcomes measured in the systematic review titled 'Optimal Strategy of Resistance Training Combined With Other Rehabilitation Interventions for Lower-Limb Dysfunction in Stroke Patients'?",
 "What are the observed benefits of combining pharmacotherapy with family-focused therapy or structured psychoeducation for early BD, specifically concerning treatment discontinuation?",
-"What compounds were identified as high-abundance peaks in the Huiyang Shengji unguent according to UPLC-MS/MS analysis?",
+###"What compounds were identified as high-abundance peaks in the Huiyang Shengji unguent according to UPLC-MS/MS analysis?",
 "What are the observed changes in pulmonary function indexes, such as FEV1 and PEF, in patients with cough variant asthma of wind cold attacking the lung treated with modified painless wheat-grain blistering moxibustion?",
 "According to the systematic review on heart failure therapies in Brazil, what is the incremental cost-effectiveness ratio (ICER) of spironolactone for patients with reduced ejection fraction from the SUS perspective?",
 "What impact did the synbiotic Bactecal® have on patients with uncontrolled asthma?",
 "What is a symptom associated with Type 2 diabetes mellitus?",
 "What is the risk ratio for major bleeding events in pediatric patients treated with DOACs compared to standard of care, according to the systematic review and meta-analysis?",
-"What is the association between parental involvement and depressive symptoms?",
+##"What is the association between parental involvement and depressive symptoms?",
 "What is canagliflozin associated with reducing, according to the provided context?",
 "What is the relationship between ferroptosis and POU2F3 in the context of small cell lung cancer?",
-"In a double-blind randomized controlled trial of subcutaneous immunotherapy with house dust mite extract in Indonesian children with allergic rhinitis and asthma, what was the observed trend of specific IgE levels?",
+##"In a double-blind randomized controlled trial of subcutaneous immunotherapy with house dust mite extract in Indonesian children with allergic rhinitis and asthma, what was the observed trend of specific IgE levels?",
 "What percentage of pregnant women experience dyspnea during pregnancy, according to the introduction of the paper on spirometry safety?",
 "What medical condition is mentioned as requiring new therapies and potentially benefiting from probiotics as an adjunctive strategy?",
 "What is the name of the randomized controlled trial that investigated functional near-infrared spectroscopy-guided neurofeedback combined with art therapy and cognitive behavioral therapy for post-stroke depression?",
@@ -40,14 +39,13 @@ questions = [
 "What is the known association between transcatheter aortic valve implantation and stroke?",
 "What potential mechanisms are suggested for Hui Yang Shengji unguent in promoting wound healing in patients with Yin syndrome and diabetic foot?",
 "Considering that maternal autoimmune diseases are linked to an increased risk of asthma in offspring, what is the potential relevance of asthma exacerbations during pregnancy to the common symptom of dyspnea in pregnant women?",
-"According to the systematic review on endodontic treatment of teeth with apical periodontitis and cardiovascular risk, what are the confounding factors mentioned that are linked to increased systemic inflammatory burden in the context of apical periodontitis?",
-"What does the analysis of scientific production on asthma-COPD overlap syndrome reveal about the current research landscape for this condition compared to separate research on asthma and COPD?",
+####"According to the systematic review on endodontic treatment of teeth with apical periodontitis and cardiovascular risk, what are the confounding factors mentioned that are linked to increased systemic inflammatory burden in the context of apical periodontitis?",
+##"What does the analysis of scientific production on asthma-COPD overlap syndrome reveal about the current research landscape for this condition compared to separate research on asthma and COPD?",
 "Based on the provided contexts discussing a systematic review and meta-analysis on direct oral anticoagulants, what was the observed difference in bleeding events between continuous and interrupted DOAC use for minimal bleeding-risk surgical procedures, considering potential selection bias in the findings?",
 "Does peppermint oil have any relevance in managing hypertension, which in turn could potentially impact the risk of atherosclerotic cardiovascular disease?",
 "In the context of Type 2 diabetes mellitus, how does the efficacy of a fixed-dose combination including glimepiride, voglibose, and extended-release metformin compare to other metformin combinations, given that hyperglycemia is a characteristic symptom?",
-"Considering that MASH is a progressive form of MASLD linked to type 2 diabetes mellitus, what therapeutic option has shown promise due to its metabolic effects and potential hepatic benefits, and how was the evidence for this reviewed?",
+#"Considering that MASH is a progressive form of MASLD linked to type 2 diabetes mellitus, what therapeutic option has shown promise due to its metabolic effects and potential hepatic benefits, and how was the evidence for this reviewed?",
 "What was the reported difference in systolic blood pressure at 20 days between the trial arm and placebo, given that the trial enrolled patients with systolic blood pressure between 130 and 160 mm Hg?",
-"Considering that dipeptidyl peptidase-4 inhibitors are a class of antidiabetic drugs, what is the potential relationship between their use and metabolically-dysfunction-associated steatohepatitis, given that type 2 diabetes mellitus is a strong risk factor for MASH?",
 "According to the provided contexts, what are the general and specific factors associated with depressive disorders in people living with HIV, considering both the broader impacts on their lives and the specific demographic and clinical characteristics linked to the condition?",
 "In the context of managing Type 2 diabetes mellitus, what impact does glimepiride have on insulin sensitivity, as measured by HOMA-IR, when used in fixed-dose combinations compared to other treatment regimens?",
 "Considering the study on progressive relaxation for individuals with type 2 diabetes and the information on SGLT2i and GLP-1RA therapy, what potential impact could managing fatigue through relaxation techniques have on the risk or progression of diabetic kidney disease?",
@@ -83,9 +81,22 @@ questions = [
 "What are the cognitive conditions and biomarkers that dulaglutide is associated with, and does it show a treatment effect for any of them?",
 "What are the key psychological outcomes and sleep-related measures that are mediated by the Transdiagnostic Intervention for Sleep and Circadian Dysfunction (TSC), and how do insomnia symptom severity and sleep parameters individually and jointly contribute to these mediations in the context of major depressive disorder?",
 "What is the therapeutic relationship between Benzodiazepines (BZDs) and Cognitive Behavioral Therapy (CBT) in the treatment of depression, and how does this compare to monotherapy approaches?",
-"What are the relationships between Pemetrexed, non-small cell lung cancer, and neurotoxicity, considering its therapeutic use and potential adverse effects?"
-
+"What are the relationships between Pemetrexed, non-small cell lung cancer, and neurotoxicity, considering its therapeutic use and potential adverse effects?",
+"According to the systematic review on direct oral anticoagulants in pediatric patients, which outcomes showed no statistically significant difference between DOACs and standard of care?",
+"In the trial investigating peppermint oil for hypertension, what cardiovascular outcome was explicitly NOT assessed as a primary endpoint?",
+"In the network meta-analysis on novel antidiabetic drugs for type 2 diabetes and chronic kidney disease, which drug class was NOT ranked first for reducing hypoglycemic events?",
+"In the RCT comparing MST with RUL-UB ECT, what cognitive outcome did MST fail to demonstrate a statistically significant improvement on compared to ECT?",
+"Considering that immune checkpoint inhibitors amplify T-cell-mediated drug responses, what concurrent medication use is implicitly contraindicated based on the case report involving moxifloxacin?",
+"Given that intrathecal Pemetrexed chemotherapy causes neurotoxicity as a dose-limiting adverse effect, for what patient profile would escalating Pemetrexed dosing be most problematic?",
+"According to the systematic review on asthma management during pregnancy, what is the inconsistency in findings regarding whether asthma exacerbations are associated with pre-eclampsia and low birth weight?",
+"In the meta-analysis on continuous versus interrupted DOAC use, why did the apparent benefit of continuous use in observational data disappear in high-quality randomised trials?",
+"What is the full chemical name of the triple combination inhaler being evaluated as an alternative to HFA-134a propellant in the beclometasone dipropionate study?",
+"What are the three specific plasma biomarkers — including their abbreviated forms — measured to assess Alzheimer's disease and related dementia risk in the dulaglutide REWIND trial analysis?",
+"What was the exact SUCRA score for dapagliflozin plus exenatide in reducing hypoglycemic events, according to the network meta-analysis on novel antidiabetic drugs?",
+"In the systematic review on respiratory viruses in acute asthma, what was the exact percentage prevalence of rhinovirus in adults compared to children, and what was the absolute difference between these two figures?"
 ]
+
+
 
 selected_question = st.selectbox("Select Evaluation Question", questions)
 custom_query = st.text_input("Or enter your own question:")
