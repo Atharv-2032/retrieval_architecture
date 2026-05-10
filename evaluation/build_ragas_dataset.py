@@ -80,7 +80,7 @@ def validate(data, name):
 
 
 
-with open("ragas_input.json", "r") as f:
+with open("evaluation/ragas_input.json", "r") as f:
     data = json.load(f)
 
 vector_data, graph_data, hybrid_data = build_datasets(data)

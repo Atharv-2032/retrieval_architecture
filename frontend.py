@@ -1,4 +1,6 @@
 import streamlit as st
+import pandas as pd
+import altair as alt
 from vector.run_vector import run_vector_query
 from graph.run_graph import run_graph_query
 from hybrid.run_hybrid import run_hybrid_query
@@ -117,6 +119,38 @@ def run_hybrid_rag(query):
     }
 
 
+# =========================================================
+# HARDCODED RAGAS SCORES
+# =========================================================
+ragas_df = pd.DataFrame({
+    "Architecture": ["Vector RAG", "Graph RAG", "Hybrid RAG"],
+
+    "Faithfulness": [
+        0.9158,
+        0.9189,
+        0.9031
+    ],
+
+    "Answer Relevancy": [
+        0.7156,
+        0.6047,
+        0.7132
+    ],
+
+    "Context Precision": [
+        0.7129,
+        0.4573,
+        0.6875
+    ],
+
+    "Context Recall": [
+        0.7922,
+        0.6111,
+        0.7455
+    ]
+}) 
+
+
 # ---- Run ----
 if st.button("Run Evaluation"):
 
@@ -164,3 +198,86 @@ if st.button("Run Evaluation"):
     hybrid_output = run_hybrid_rag(query)
     hybrid_placeholder.subheader("⚡ Hybrid RAG")
     hybrid_placeholder.write(hybrid_output["answer"])
+
+# =====================================================
+# RAGAS RESULTS
+# =====================================================
+st.divider()
+
+st.header("📊 Final RAGAS Evaluation Metrics")
+
+# =====================================================
+# TABLE
+# =====================================================
+st.subheader("📋 Detailed Results")
+ragas_df.index = range(1, len(ragas_df) + 1)
+st.dataframe(
+    ragas_df,
+    use_container_width=True
+)
+
+# =====================================================
+# CLUSTERED BAR CHART
+# =====================================================
+st.subheader("📈 RAGAS Metric Comparison")
+
+# Convert wide -> long format
+chart_data = ragas_df.melt(
+    id_vars="Architecture",
+    var_name="Metric",
+    value_name="Score"
+)
+
+# Create grouped bars
+chart = alt.Chart(chart_data).mark_bar(
+    size=18   # thinner bars
+).encode(
+    x=alt.X("Architecture:N", title="Architecture"),
+    xOffset="Metric:N",
+    y=alt.Y("Score:Q", scale=alt.Scale(domain=[0, 1])),
+    color="Metric:N",
+    tooltip=["Architecture", "Metric", "Score"]
+).properties(
+    width=700,
+    height=400,
+    title="RAGAS Metrics Comparison"
+)
+
+st.altair_chart(chart, use_container_width=True)
+
+# =====================================================
+# OVERALL SCORE
+# =====================================================
+
+# Calculate overall average score
+ragas_df["Overall Score"] = ragas_df[
+    [
+        "Faithfulness",
+        "Answer Relevancy",
+        "Context Precision",
+        "Context Recall"
+    ]
+].mean(axis=1)
+
+st.subheader("🏆 Overall Architecture Comparison")
+
+overall_chart = alt.Chart(ragas_df).mark_bar(
+    size=45
+).encode(
+    x=alt.X("Architecture:N", title="Architecture"),
+    y=alt.Y(
+        "Overall Score:Q",
+        scale=alt.Scale(domain=[0, 1])
+    ),
+    color="Architecture:N",
+    tooltip=["Architecture", "Overall Score"]
+).properties(
+    width=500,
+    height=400,
+    title="Average RAGAS Score"
+)
+
+st.altair_chart(
+    overall_chart,
+    use_container_width=True
+)

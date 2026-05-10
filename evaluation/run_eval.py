@@ -13,8 +13,12 @@ from ragas.metrics import (
     context_recall
 )
 from langchain_community.embeddings import HuggingFaceEmbeddings
+from dotenv import load_dotenv
+load_dotenv()
 
 os.environ["RAGAS_MAX_WORKERS"] = "1"
+
+
 
 USE_OPENAI_EMBEDDINGS = False
 
@@ -28,10 +32,12 @@ hybrid_ds = load_dataset("hybrid_dataset.json")
 
 # ← replace llm_factory with LangchainLLMWrapper + ChatOpenAI
 # n=3 is set here directly on the ChatOpenAI object where it actually works
+api_key = os.getenv("OPENAI_API_KEY")
+print(api_key)
 llm = LangchainLLMWrapper(
     ChatOpenAI(
         model="gpt-4o",
-        api_key=os.getenv("OPENAI_API_KEY"),
+        api_key=api_key,
         max_tokens=5000,
         n=3,  # ← works here
     )
@@ -70,6 +76,6 @@ def run_eval(name, dataset):
 
     print(f"{name.upper()} RESULTS:", result)
 
-run_eval("vector", vector_ds)
+#run_eval("vector", vector_ds)
 run_eval("graph", graph_ds)
 run_eval("hybrid", hybrid_ds)

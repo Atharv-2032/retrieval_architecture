@@ -11,8 +11,8 @@ from hybrid.run_hybrid import run_hybrid_query
 # ---------------------------
 # CONFIG
 # ---------------------------
-GROUND_TRUTH_PATH = os.path.join(os.path.dirname(__file__), "ground_truths.json")
-OUTPUT_PATH = os.path.join(os.path.dirname(__file__), "ragas_input.json")
+GROUND_TRUTH_PATH = os.path.join(os.path.dirname(__file__), "ground_truths1.json")
+OUTPUT_PATH = os.path.join(os.path.dirname(__file__), "ragas_input1.json")
 
 MAX_RETRIES = 3
 RETRY_DELAYS = [5, 15, 30]  # seconds between retries — escalating backoff
