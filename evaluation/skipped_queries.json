@@ -1,0 +1,62 @@
+[
+  {
+    "query": "What are the observed changes in pulmonary function indexes, such as FEV1 and PEF, in patients with cough variant asthma of wind cold attacking the lung treated with modified painless wheat-grain blistering moxibustion?",
+    "failed_pipelines": [
+      "hybrid"
+    ]
+  },
+  {
+    "query": "What percentage of pregnant women experience dyspnea during pregnancy, according to the introduction of the paper on spirometry safety?",
+    "failed_pipelines": [
+      "graph"
+    ]
+  },
+  {
+    "query": "What is the effect of patient education on the development of deep vein thrombosis in patients undergoing orthopedic surgery?",
+    "failed_pipelines": [
+      "graph"
+    ]
+  },
+  {
+    "query": "What is the name of the randomized controlled trial that investigated functional near-infrared spectroscopy-guided neurofeedback combined with art therapy and cognitive behavioral therapy for post-stroke depression?",
+    "failed_pipelines": [
+      "vector"
+    ]
+  },
+  {
+    "query": "According to the review, what is a proposed mechanism by which fructose exposure might contribute to pediatric atopic disease, and how do epidemiologic findings on this link vary?",
+    "failed_pipelines": [
+      "graph"
+    ]
+  },
+  {
+    "query": "In the context of Type 2 diabetes mellitus and its management, how does the study investigating Glimepiride, Voglibose, and Metformin ER relate to changes in HbA1c levels, considering the prevalence of T2DM in India and the general characteristics of the disease?",
+    "failed_pipelines": [
+      "hybrid"
+    ]
+  },
+  {
+    "query": "In adult patients with Type 2 Diabetes Mellitus inadequately controlled on metformin monotherapy, what was the observed superiority of the fixed-dose combination of glimepiride, voglibose, and extended-release metformin compared to other combinations in reducing hyperglycemia?",
+    "failed_pipelines": [
+      "hybrid"
+    ]
+  },
+  {
+    "query": "What are the potential adverse events associated with immune checkpoint inhibitors, and what serious conditions do they treat?",
+    "failed_pipelines": [
+      "hybrid"
+    ]
+  },
+  {
+    "query": "What factors were associated with low-dose CT uptake for lung cancer screening among high-risk populations, according to this systematic review and meta-analysis, and how did these factors influence the outcomes?",
+    "failed_pipelines": [
+      "hybrid"
+    ]
+  },
+  {
+    "query": "What are the cognitive conditions and biomarkers that dulaglutide is associated with, and does it show a treatment effect for any of them?",
+    "failed_pipelines": [
+      "hybrid"
+    ]
+  }
+]

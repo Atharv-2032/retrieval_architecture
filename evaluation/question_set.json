@@ -1,0 +1,242 @@
+[
+  {
+    "question": "What is the study about regarding Huangqi Guizhi Wuwu decoction and intrathecal Pemetrexed chemotherapy?",
+    "hop_type": "single"
+  },
+  {
+    "question": "What is the efficacy and safety of direct oral anticoagulants compared to heparin in pediatric patients, according to the systematic review and meta-analysis?",
+    "hop_type": "single"
+  },
+  {
+    "question": "Does the systematic review and meta-analysis titled 'Antenatal psychological interventions may ameliorate postpartum depression' mention mindfulness as a type of prenatal psychological intervention?",
+    "hop_type": "single"
+  },
+  {
+    "question": "What is the relationship between postpartum depression and breastfeeding?",
+    "hop_type": "single"
+  },
+  {
+    "question": "What medical databases were searched in the systematic review and meta-analysis titled 'Effects of Transcranial Magnetic Stimulation on Patients with Major Depressive Disorder'?",
+    "hop_type": "single"
+  },
+  {
+    "question": "What medical concepts were searched for in the meta-analysis study on the effect of education on deep vein thrombosis in orthopedic surgery patients?",
+    "hop_type": "single"
+  },
+  {
+    "question": "What are the primary outcomes measured in the systematic review titled 'Optimal Strategy of Resistance Training Combined With Other Rehabilitation Interventions for Lower-Limb Dysfunction in Stroke Patients'?",
+    "hop_type": "single"
+  },
+  {
+    "question": "What are the observed benefits of combining pharmacotherapy with family-focused therapy or structured psychoeducation for early BD, specifically concerning treatment discontinuation?",
+    "hop_type": "single"
+  },
+  {
+    "question": "What are the observed changes in pulmonary function indexes, such as FEV1 and PEF, in patients with cough variant asthma of wind cold attacking the lung treated with modified painless wheat-grain blistering moxibustion?",
+    "hop_type": "single"
+  },
+  {
+    "question": "According to the systematic review on heart failure therapies in Brazil, what is the incremental cost-effectiveness ratio (ICER) of spironolactone for patients with reduced ejection fraction from the SUS perspective?",
+    "hop_type": "single"
+  },
+  {
+    "question": "What impact did the synbiotic Bactecal® have on patients with uncontrolled asthma?",
+    "hop_type": "single"
+  },
+  {
+    "question": "What is the risk ratio for major bleeding events in pediatric patients treated with DOACs compared to standard of care, according to the systematic review and meta-analysis?",
+    "hop_type": "single"
+  },
+  {
+    "question": "What is the relationship between ferroptosis and POU2F3 in the context of small cell lung cancer?",
+    "hop_type": "single"
+  },
+  {
+    "question": "What percentage of pregnant women experience dyspnea during pregnancy, according to the introduction of the paper on spirometry safety?",
+    "hop_type": "single"
+  },
+  {
+    "question": "What is the efficacy of gefitinib in treating CNS metastases in patients with advanced EGFR-mutated non-small cell lung cancer?",
+    "hop_type": "single"
+  },
+  {
+    "question": "What is the effect of patient education on the development of deep vein thrombosis in patients undergoing orthopedic surgery?",
+    "hop_type": "single"
+  },
+  {
+    "question": "What is the known association between transcatheter aortic valve implantation and stroke?",
+    "hop_type": "single"
+  },
+  {
+    "question": "What is the name of the randomized controlled trial that investigated functional near-infrared spectroscopy-guided neurofeedback combined with art therapy and cognitive behavioral therapy for post-stroke depression?",
+    "hop_type": "single"
+  },
+  {
+    "question": "Considering that maternal autoimmune diseases are linked to an increased risk of asthma in offspring, what is the potential relevance of asthma exacerbations during pregnancy to the common symptom of dyspnea in pregnant women?",
+    "hop_type": "multi"
+  },
+  {
+    "question": "According to the systematic review on endodontic treatment of teeth with apical periodontitis and cardiovascular risk, what are the confounding factors mentioned that are linked to increased systemic inflammatory burden in the context of apical periodontitis?",
+    "hop_type": "multi"
+  },
+  {
+    "question": "What does the analysis of scientific production on asthma-COPD overlap syndrome reveal about the current research landscape for this condition compared to separate research on asthma and COPD?",
+    "hop_type": "multi"
+  },
+  {
+    "question": "Based on the provided contexts discussing a systematic review and meta-analysis on direct oral anticoagulants, what was the observed difference in bleeding events between continuous and interrupted DOAC use for minimal bleeding-risk surgical procedures, considering potential selection bias in the findings?",
+    "hop_type": "multi"
+  },
+  {
+    "question": "Does peppermint oil have any relevance in managing hypertension, which in turn could potentially impact the risk of atherosclerotic cardiovascular disease?",
+    "hop_type": "multi"
+  },
+  {
+    "question": "In the context of Type 2 diabetes mellitus, how does the efficacy of a fixed-dose combination including glimepiride, voglibose, and extended-release metformin compare to other metformin combinations, given that hyperglycemia is a characteristic symptom?",
+    "hop_type": "multi"
+  },
+  {
+    "question": "What was the reported difference in systolic blood pressure at 20 days between the trial arm and placebo, given that the trial enrolled patients with systolic blood pressure between 130 and 160 mm Hg?",
+    "hop_type": "multi"
+  },
+  {
+    "question": "Considering that dipeptidyl peptidase-4 inhibitors are a class of antidiabetic drugs, what is the potential relationship between their use and metabolically-dysfunction-associated steatohepatitis, given that type 2 diabetes mellitus is a strong risk factor for MASH?",
+    "hop_type": "multi"
+  },
+  {
+    "question": "According to the provided contexts, what are the general and specific factors associated with depressive disorders in people living with HIV, considering both the broader impacts on their lives and the specific demographic and clinical characteristics linked to the condition?",
+    "hop_type": "multi"
+  },
+  {
+    "question": "According to the review, what is a proposed mechanism by which fructose exposure might contribute to pediatric atopic disease, and how do epidemiologic findings on this link vary?",
+    "hop_type": "multi"
+  },
+  {
+    "question": "According to the provided contexts, what is the effect of antenatal psychological interventions on postpartum depression outcomes and incidence rates in pregnant women?",
+    "hop_type": "multi"
+  },
+  {
+    "question": "What is the primary therapeutic goal of the randomized controlled trial investigating Huangqi Guizhi Wuwu Decoction in non-small cell lung cancer patients with leptomeningeal metastases undergoing intrathecal Pemetrexed chemotherapy, given the limitations of this treatment?",
+    "hop_type": "multi"
+  },
+  {
+    "question": "Considering the efficacy and safety of novel antidiabetic drugs for type 2 diabetes and chronic kidney disease as detailed in the network meta-analysis, how do glucagon-like peptide-1 receptor agonists contribute to the management of diabetic kidney disease, and what does emerging evidence suggest about their combination therapy?",
+    "hop_type": "multi"
+  },
+  {
+    "question": "Considering the potential for amplified immune-related adverse events when immune checkpoint inhibitors are used concurrently with other medications, as highlighted in the case report and literature review, what specific drug-induced adverse events are suggested to be exacerbated by this combination?",
+    "hop_type": "multi"
+  },
+  {
+    "question": "In the randomized controlled trial exploring the effectiveness of functional near-infrared spectroscopy-guided neurofeedback combined with art therapy and cognitive behavioral therapy for post-stroke depression, what were the secondary outcome measures related to inflammatory markers, specifically concerning TNF-alpha levels?",
+    "hop_type": "multi"
+  },
+  {
+    "question": "In the context of Type 2 diabetes mellitus and its management, how does the study investigating Glimepiride, Voglibose, and Metformin ER relate to changes in HbA1c levels, considering the prevalence of T2DM in India and the general characteristics of the disease?",
+    "hop_type": "multi"
+  },
+  {
+    "question": "How might breathing and positioning strategies, discussed in the context of asthma management, potentially help alleviate dyspnea during pregnancy, considering the link between asthma exacerbations and adverse perinatal outcomes?",
+    "hop_type": "multi"
+  },
+  {
+    "question": "Considering the study on progressive relaxation for individuals with type 2 diabetes and the information on SGLT2i and GLP-1RA therapy, what potential impact could managing fatigue through relaxation techniques have on the risk or progression of diabetic kidney disease?",
+    "hop_type": "multi"
+  },
+  {
+    "question": "Considering a study investigating vitamin D receptor polymorphisms and their association with diabetes risk in prediabetic adults, and a separate context highlighting the benefits of combination therapy for diabetic kidney disease in type 2 diabetes patients, what specific renal complications in type 2 diabetes patients could be indirectly impacted by interventions that influence vitamin D levels and diabetes risk?",
+    "hop_type": "multi"
+  },
+  {
+    "question": "What is the evidence regarding the association between smartphone application-based asthma management and the risk of pre-term birth in pregnant individuals?",
+    "hop_type": "multi"
+  },
+  {
+    "question": "In adult patients with Type 2 Diabetes Mellitus inadequately controlled on metformin monotherapy, what was the observed superiority of the fixed-dose combination of glimepiride, voglibose, and extended-release metformin compared to other combinations in reducing hyperglycemia?",
+    "hop_type": "multi"
+  },
+  {
+    "question": "What are the benefits of psychosocial interventions that treat borderline personality disorder, psychosis, and mental illness, and how are they associated with patient engagement?",
+    "hop_type": "aggregative"
+  },
+  {
+    "question": "What are the symptoms and associated biological markers that are monitored when assessing post-stroke depression?",
+    "hop_type": "aggregative"
+  },
+  {
+    "question": "What conditions do glucagon-like peptide-1 receptor agonists treat, and what risk factor are they associated with, according to the provided text?",
+    "hop_type": "aggregative"
+  },
+  {
+    "question": "What are the key terms mentioned in relation to cognitive impairment in type 2 diabetes, including other specific neurological conditions and the general phenomenon of cognitive dysfunction?",
+    "hop_type": "aggregative"
+  },
+  {
+    "question": "What are the potential adverse events associated with immune checkpoint inhibitors, and what serious conditions do they treat?",
+    "hop_type": "aggregative"
+  },
+  {
+    "question": "What is the association between magnesium levels and diabetic retinopathy in type 2 diabetes, and what is the certainty of this evidence?",
+    "hop_type": "aggregative"
+  },
+  {
+    "question": "What were the overall effects of probiotic supplementation on patients with substance-induced depressive disorder, considering their impact on depressive symptoms, anxiety, and inflammatory markers?",
+    "hop_type": "aggregative"
+  },
+  {
+    "question": "What factors were associated with low-dose CT uptake for lung cancer screening among high-risk populations, according to this systematic review and meta-analysis, and how did these factors influence the outcomes?",
+    "hop_type": "aggregative"
+  },
+  {
+    "question": "What are the comparative efficacy and cognitive safety profiles of Magnetic Seizure Therapy (MST) versus right unilateral ultra-brief electroconvulsive therapy (RUL-UB ECT) for patients with depression and major depressive disorder, as indicated by their respective primary outcomes?",
+    "hop_type": "aggregative"
+  },
+  {
+    "question": "What is the breakdown of algorithms identified in the systematic review for identifying asthma patients, specifically in terms of those identifying general asthma, asthma exacerbations, and those characterizing asthma severity or control?",
+    "hop_type": "aggregative"
+  },
+  {
+    "question": "What are the primary risks and complications associated with the use of cerebral embolic protection devices, beyond the initial concern of embolic debris?",
+    "hop_type": "aggregative"
+  },
+  {
+    "question": "What are the combined therapeutic benefits of sodium-glucose cotransporter-2 inhibitors, specifically in relation to treating chronic conditions and mortality?",
+    "hop_type": "aggregative"
+  },
+  {
+    "question": "What are the cognitive conditions and biomarkers that dulaglutide is associated with, and does it show a treatment effect for any of them?",
+    "hop_type": "aggregative"
+  },
+  {
+    "question": "What is the therapeutic relationship between Benzodiazepines (BZDs) and Cognitive Behavioral Therapy (CBT) in the treatment of depression, and how does this compare to monotherapy approaches?",
+    "hop_type": "aggregative"
+  },
+  {
+    "question": "According to the systematic review on direct oral anticoagulants in pediatric patients, which outcomes showed no statistically significant difference between DOACs and standard of care?",
+    "hop_type": "single"
+  },
+  {
+    "question": "In the RCT comparing MST with RUL-UB ECT, what cognitive outcome did MST fail to demonstrate a statistically significant improvement on compared to ECT?",
+    "hop_type": "single"
+  },
+  {
+    "question": "Considering that immune checkpoint inhibitors amplify T-cell-mediated drug responses, what concurrent medication use is implicitly contraindicated based on the case report involving moxifloxacin?",
+    "hop_type": "multi"
+  },
+  {
+    "question": "Given that intrathecal Pemetrexed chemotherapy causes neurotoxicity as a dose-limiting adverse effect, for what patient profile would escalating Pemetrexed dosing be most problematic?",
+    "hop_type": "multi"
+  },
+  {
+    "question": "According to the systematic review on asthma management during pregnancy, what is the inconsistency in findings regarding whether asthma exacerbations are associated with pre-eclampsia and low birth weight?",
+    "hop_type": "multi"
+  },
+  {
+    "question": "What are the three specific plasma biomarkers — including their abbreviated forms — measured to assess Alzheimer's disease and related dementia risk in the dulaglutide REWIND trial analysis?",
+    "hop_type": "single"
+  },
+  {
+    "question": "In the systematic review on respiratory viruses in acute asthma, what was the exact percentage prevalence of rhinovirus in adults compared to children, and what was the absolute difference between these two figures?",
+    "hop_type": "single"
+  }
+]

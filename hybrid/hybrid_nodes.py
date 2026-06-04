@@ -21,6 +21,7 @@ def hybrid_retrieve_node(state):
 
     # STEP 4: Select paths
     paths = select_traversal_paths(query, matched_nodes)
+    paths = list(set(paths + ["MENTIONS"]))
     print("\n[STEP 4] Paths:", paths)
 
     # STEP 5: Traverse graph

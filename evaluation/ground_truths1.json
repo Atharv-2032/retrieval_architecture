@@ -1,0 +1,172 @@
+[
+   {
+      "question":"What are the observed changes in pulmonary function indexes, such as FEV1 and PEF, in patients with cough variant asthma of wind cold attacking the lung treated with modified painless wheat-grain blistering moxibustion?",
+      "ground_truth":"After treatment, FEV1, PEF, and FEV1/FVC% were increased compared with those before treatment (P<0.05) in both groups. The FEV1, PEF, and FEV1/FVC% in the wheat-grain blistering moxibustion group were higher than those in the montelukast sodium group (P<0.01, P<0.05).",
+      "hop_type":"single",
+      "source_abstracts":[
+         {
+            "title":"[Effect of modified painless wheat-grain blistering moxibustion on cough variant asthma of wind cold attacking the lung: a randomized controlled trial].",
+            "bm25_score":90.644
+         }
+      ]
+   },
+   {
+      "question":"What percentage of pregnant women experience dyspnea during pregnancy, according to the introduction of the paper on spirometry safety?",
+      "ground_truth":"Up to 75% of pregnant women complain of dyspnea at some point during pregnancy.",
+      "hop_type":"single",
+      "source_abstracts":[
+         {
+            "title":"Safety of Performing Spirometry During Pregnancy: A Systematic Review.",
+            "bm25_score":41.142
+         }
+      ]
+   },
+   {
+      "question":"What is the effect of patient education on the development of deep vein thrombosis in patients undergoing orthopedic surgery?",
+      "ground_truth":"The risk of developing DVT was significantly lower in groups that received educational interventions compared to control groups (OR ≈ 0.50, 95% CI: 0.37-0.69, p <0.001). Educational interventions are effective in preventing DVT in orthopedic surgery patients when applied with pharmacological and mechanical methods.",
+      "hop_type":"single",
+      "source_abstracts":[
+         {
+            "title":"The effect of education on deep vein trombosis in patients undergoing orthopedic surgery: a meta-analysis study.",
+            "bm25_score":53.983
+         }
+      ]
+   },
+   {
+      "question":"What is the name of the randomized controlled trial that investigated functional near-infrared spectroscopy-guided neurofeedback combined with art therapy and cognitive behavioral therapy for post-stroke depression?",
+      "ground_truth":"The study is described as a multicenter, assessor-blinded randomized controlled trial. The context does not provide a specific name for this trial.",
+      "hop_type":"single",
+      "source_abstracts":[
+         {
+            "title":"Functional near-infrared spectroscopy-guided neurofeedback combined with art therapy and cognitive behavioral therapy for post-stroke depression: A randomized controlled trial.",
+            "bm25_score":58.961
+         }
+      ]
+   },
+   {
+      "question":"According to the review, what is a proposed mechanism by which fructose exposure might contribute to pediatric atopic disease, and how do epidemiologic findings on this link vary?",
+      "ground_truth":"Proposed mechanisms include gut dysbiosis, impaired epithelial barrier integrity in the gut and airways, metabolic endotoxemia, and amplification of type 2 immune responses. Epidemiologic findings linking fructose intake with asthma and atopic disorders remain heterogeneous, with some studies showing modest to moderate associations and others showing stronger associations with two- to five-fold higher odds of asthma.",
+      "hop_type":"multi",
+      "source_abstracts":[
+         {
+            "title":"Fructose-Containing Dietary Exposures and Pediatric Atopic Disease: A Review of Epidemiologic Evidence.",
+            "bm25_score":39.664
+         },
+         {
+            "title":"Subcutaneous immunotherapy with house dust mite extract in Indonesian children with allergic rhinitis and asthma: A double-blind randomized controlled trial.",
+            "bm25_score":10.598
+         }
+      ]
+   },
+   {
+      "question":"In the context of Type 2 diabetes mellitus and its management, how does the study investigating Glimepiride, Voglibose, and Metformin ER relate to changes in HbA1c levels, considering the prevalence of T2DM in India and the general characteristics of the disease?",
+      "ground_truth":"India has approximately 89 million individuals living with Type 2 diabetes mellitus (T2DM). In a study comparing fixed-dose combination of glimepiride, voglibose, and extended-release metformin (GLIME+VOGLI+MET-ER) with voglibose and metformin (VOGLI+MET) and glimepiride and metformin (GLIME+MET) in patients poorly controlled with metformin, all treatments showed a significant reduction in HbA1c. The mean change in HbA1c was significantly greater with GLIME+VOGLI+MET-ER compared to VOGLI+MET and GLIME+MET at Weeks 12 and 24.",
+      "hop_type":"multi",
+      "source_abstracts":[
+         {
+            "title":"Efficacy and Safety of Glimepiride, Voglibose, and Metformin ER in Type 2 Diabetes: A Randomized, Active-Controlled Study.",
+            "bm25_score":26.019
+         },
+         {
+            "title":"Prevalence of respiratory viruses in stable and acute asthma: a systematic review and meta-analysis.",
+            "bm25_score":13.703
+         }
+      ]
+   },
+   {
+      "question":"In adult patients with Type 2 Diabetes Mellitus inadequately controlled on metformin monotherapy, what was the observed superiority of the fixed-dose combination of glimepiride, voglibose, and extended-release metformin compared to other combinations in reducing hyperglycemia?",
+      "ground_truth":"GLIME+VOGLI+MET-ER demonstrated superior HbA1c reduction compared to VOGLI+MET and GLIME+MET at Weeks 12 and 24. At Week 12, the mean change in % HbA1c was -1.02 ± 0.60 for GLIME+VOGLI+MET-ER versus -0.68 ± 0.64 for VOGLI+MET (p < 0.001) and -0.88 ± 0.49 for GLIME+MET (p = 0.0154). At Week 24, it was -1.57 ± 0.74 versus -1.11 ± 0.80 (p < 0.001) and -1.28 ± 0.60 (p = 0.0002) respectively.",
+      "hop_type":"multi",
+      "source_abstracts":[
+         {
+            "title":"Efficacy and Safety of Glimepiride, Voglibose, and Metformin ER in Type 2 Diabetes: A Randomized, Active-Controlled Study.",
+            "bm25_score":67.098
+         },
+         {
+            "title":"Efficacy and safety of novel antidiabetic drugs in patients with type 2 diabetes and chronic kidney disease: a network meta-analysis.",
+            "bm25_score":20.239
+         }
+      ]
+   },
+   {
+      "question":"What are the potential adverse events associated with immune checkpoint inhibitors, and what serious conditions do they treat?",
+      "ground_truth":"Immune checkpoint inhibitors (ICIs) are associated with immune-related adverse events (irAEs) [Source 1]. When ICIs are combined with other medications, the risk of drug-induced liver injury (DILI) and Stevens-Johnson syndrome/toxic epidermal necrolysis (SJS/TEN) may be amplified [Source 1]. ICIs are used in the treatment of advanced driver-negative non-small cell lung cancer (NSCLC) [Source 3].",
+      "hop_type":"aggregative",
+      "source_abstracts":[
+         {
+            "title":"Concurrent moxifloxacin-induced liver injury and toxic epidermal necrolysis after immune checkpoint inhibition: a case report and literature review.",
+            "bm25_score":19.29
+         },
+         {
+            "title":"Are some therapists more effective when they deliver one type of therapy versus another?",
+            "bm25_score":18.789
+         },
+         {
+            "title":"The Promise of Chemotherapy-Free Strategies in Advanced Driver-Negative NSCLC: A Systematic Review and Network Meta-Analysis of Antiangiogenic Combination Therapies.",
+            "bm25_score":15.436
+         },
+         {
+            "title":"Three Low-Dose Antihypertensive Agents in a Single Pill after Intracerebral Hemorrhage.",
+            "bm25_score":14.29
+         },
+         {
+            "title":"Longitudinal Analysis of Peripheral Blood CD4+ T-Cell Profiles and Clinical Outcomes in Metastatic Non-Small-Cell Lung Cancer Patients Following Bronchoscopic Cryotherapy and Pembrolizumab-Based Therapy.",
+            "bm25_score":13.146
+         }
+      ]
+   },
+   {
+      "question":"What factors were associated with low-dose CT uptake for lung cancer screening among high-risk populations, according to this systematic review and meta-analysis, and how did these factors influence the outcomes?",
+      "ground_truth":"In high-risk populations undergoing lung cancer screening, female sex was positively associated with low-dose CT (LDCT) uptake, while current tobacco use was negatively associated. In single-arm studies, nurse-led shared decision-making (SDM) programmes achieved a pooled LDCT uptake rate of 98% and a willingness to participate of 68%. In comparative studies, nurse-led SDM showed no significant difference in LDCT uptake compared with usual care.",
+      "hop_type":"aggregative",
+      "source_abstracts":[
+         {
+            "title":"Effects of nurse-led shared decision-making on low-dose CT uptake and screening outcomes in high-risk populations: a systematic review and meta-analysis.",
+            "bm25_score":49.449
+         },
+         {
+            "title":"Significant Incidental Findings in the National Lung Screening Trial and Diagnosis of Extrapulmonary Cancer.",
+            "bm25_score":32.826
+         },
+         {
+            "title":"Risk factors for atherosclerotic cardiovascular disease in individuals with heterozygous familial hypercholesterolemia: a systematic review and meta-analysis.",
+            "bm25_score":29.305
+         },
+         {
+            "title":"Factors associated with wheezing in Indigenous children and adolescents: A systematic review of the global literature.",
+            "bm25_score":28.352
+         },
+         {
+            "title":"Accuracy of Radiomics-Based Machine Learning for Predicting Risk of Recurrence in Non-Small Cell Lung Cancer: Systematic Review and Meta-Analysis.",
+            "bm25_score":25.022
+         }
+      ]
+   },
+   {
+      "question":"What are the cognitive conditions and biomarkers that dulaglutide is associated with, and does it show a treatment effect for any of them?",
+      "ground_truth":"Dulaglutide has been associated with substantive cognitive impairment (SCI) and Alzheimer's disease and related dementia (ADRD) biomarkers. In participants with elevated phosphorylated tau217 (p-tau217) ≥25 pg/mL, dulaglutide was associated with a reduction in SCI (hazard ratio = 0.78; p = 0.0064).",
+      "hop_type":"aggregative",
+      "source_abstracts":[
+         {
+            "title":"Safety of Performing Spirometry During Pregnancy: A Systematic Review.",
+            "bm25_score":22.515
+         },
+         {
+            "title":"Dulaglutide and neurodegeneration biomarkers: REWIND post hoc analysis.",
+            "bm25_score":22.47
+         },
+         {
+            "title":"Inflammatory markers and electroconvulsive therapy-related cognitive outcomes in Depressive Disorders: A systematic review.",
+            "bm25_score":21.825
+         },
+         {
+            "title":"Impact of Endodontic Treatment of Teeth With Apical Periodontitis on Levels of Inflammatory Biomarkers Associated With Cardiovascular Risk: A Systematic Review and Meta-Analysis.",
+            "bm25_score":20.702
+         },
+         {
+            "title":"Efficacy and safety of accelerated transcranial magnetic stimulation on suicidality in depressive disorders: A systematic review and meta-analysis.",
+            "bm25_score":20.225
+         }
+      ]
+   }
+]

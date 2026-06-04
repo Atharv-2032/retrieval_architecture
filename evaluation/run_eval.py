@@ -2,8 +2,8 @@ import json
 import os
 from datasets import Dataset
 from openai import OpenAI
-from ragas.llms import llm_factory
-
+from langchain_openai import ChatOpenAI
+from ragas.llms import LangchainLLMWrapper
 
 from ragas import evaluate
 from ragas.metrics import (
@@ -12,46 +12,48 @@ from ragas.metrics import (
     context_precision,
     context_recall
 )
-
-
 from langchain_community.embeddings import HuggingFaceEmbeddings
-
+from dotenv import load_dotenv
+load_dotenv()
 
 os.environ["RAGAS_MAX_WORKERS"] = "1"
 
+
+
 USE_OPENAI_EMBEDDINGS = False
+
 def load_dataset(path):
     with open(path, "r") as f:
         return Dataset.from_list(json.load(f))
-
 
 vector_ds = load_dataset("vector_dataset.json")
 graph_ds = load_dataset("graph_dataset.json")
 hybrid_ds = load_dataset("hybrid_dataset.json")
 
-
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-
-llm = llm_factory("gpt-4o-mini",client = client,max_tokens = 5000)
-
+# ← replace llm_factory with LangchainLLMWrapper + ChatOpenAI
+# n=3 is set here directly on the ChatOpenAI object where it actually works
+api_key = os.getenv("OPENAI_API_KEY")
+print(api_key)
+llm = LangchainLLMWrapper(
+    ChatOpenAI(
+        model="gpt-4o",
+        api_key=api_key,
+        max_tokens=5000,
+        n=3,  # ← works here
+    )
+)
 
 if USE_OPENAI_EMBEDDINGS:
     from ragas.embeddings import embedding_factory
-
-    embeddings = embedding_factory(
-        "text-embedding-3-small",
-        client=client
-    )
+    from openai import OpenAI
+    client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+    embeddings = embedding_factory("text-embedding-3-small", client=client)
     print("\n Using OpenAI embeddings\n")
-
 else:
-    from langchain_community.embeddings import HuggingFaceEmbeddings
-
     embeddings = HuggingFaceEmbeddings(
         model_name="sentence-transformers/all-MiniLM-L6-v2"
     )
     print("\n Using HuggingFace embeddings\n")
-
 
 metrics = [
     faithfulness,
@@ -59,8 +61,6 @@ metrics = [
     context_precision,
     context_recall
 ]
-
-
 
 def run_eval(name, dataset):
     print(f"\n Evaluating {name.upper()}...\n")
@@ -70,13 +70,12 @@ def run_eval(name, dataset):
         metrics=metrics,
         llm=llm,
         embeddings=embeddings,
-        batch_size = 1,
+        batch_size=1,
         raise_exceptions=False
     )
 
     print(f"{name.upper()} RESULTS:", result)
 
-
-run_eval("vector", vector_ds)
+#run_eval("vector", vector_ds)
 run_eval("graph", graph_ds)
 run_eval("hybrid", hybrid_ds)
