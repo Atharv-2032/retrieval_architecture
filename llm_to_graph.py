@@ -2,16 +2,19 @@ from neo4j import GraphDatabase
 import json
 import google.generativeai as genai
 import spacy
-
+import os
+from dotenv import load_dotenv
 from sentence_transformers import SentenceTransformer, util, CrossEncoder
 
+load_dotenv()
 
-URI = "bolt://172.30.144.1:7687"
-USERNAME = "neo4j"
-PASSWORD = "vihangA1@"
+URI = os.getenv("NEO4J_URI")
+USERNAME = os.getenv("NEO4J_USER")
+PASSWORD = os.getenv("NEO4J_PASS")
 driver = GraphDatabase.driver(URI, auth = (USERNAME,PASSWORD))
 
-genai.configure(api_key="AIzaSyC490NYjYgTLo_89r7dTI6H_ApPkdRyjK4")
+api_key = os.getenv("GOOGLE_API_KEY")
+genai.configure(api_key=api_key)
 model = genai.GenerativeModel("gemini-2.5-flash-lite")
 
 filename = "papers_data.json"
