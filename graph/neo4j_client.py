@@ -1,11 +1,13 @@
 from neo4j import GraphDatabase
-
+import os
 
 class Neo4jClient:
     def __init__(self):
+        password = os.getenv("NEO4J_PASS")
+        url = os.getenv("NEO4J_URL")
         self.driver = GraphDatabase.driver(
-            "bolt://172.21.16.1:7687",   
-            auth=("neo4j", "Worldchampion") 
+            url,   
+            auth=("neo4j",password ) 
         )
 
     def close(self):

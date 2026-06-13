@@ -1,0 +1,156 @@
+[
+  {
+    "question": "What is the relationship between postpartum depression and breastfeeding?",
+    "ground_truth": "INSUFFICIENT_CONTEXT",
+    "hop_type": "single",
+    "source_abstracts": [
+      {
+        "title": "[Boosting oxytocin in postpartum depression].",
+        "bm25_score": 14.727
+      }
+    ]
+  },
+  {
+    "question": "Considering that maternal autoimmune diseases are linked to an increased risk of asthma in offspring, what is the potential relevance of asthma exacerbations during pregnancy to the common symptom of dyspnea in pregnant women?",
+    "ground_truth": "INSUFFICIENT_CONTEXT",
+    "hop_type": "multi",
+    "source_abstracts": [
+      {
+        "title": "Maternal 12-HETE is associated with childhood asthma and the responses to prenatal omega-3 supplementation.",
+        "bm25_score": 16.845
+      },
+      {
+        "title": "Asthma Control During Pregnancy and Adverse Perinatal Outcomes: A Systematic Review.",
+        "bm25_score": 21.872
+      }
+    ]
+  },
+  {
+    "question": "Considering that dipeptidyl peptidase-4 inhibitors are a class of antidiabetic drugs, what is the potential relationship between their use and metabolically-dysfunction-associated steatohepatitis, given that type 2 diabetes mellitus is a strong risk factor for MASH?",
+    "ground_truth": "INSUFFICIENT_CONTEXT",
+    "hop_type": "multi",
+    "source_abstracts": [
+      {
+        "title": "Efficacy and safety of novel antidiabetic drugs in patients with type 2 diabetes and chronic kidney disease: a network meta-analysis.",
+        "bm25_score": 16.254
+      },
+      {
+        "title": "Tirzepatide in Metabolically Dysfunctional-Associated Steatohepatitis (MASH): A Bibliometric and Evidence-Based Review.",
+        "bm25_score": 21.778
+      }
+    ]
+  },
+  {
+    "question": "How might breathing and positioning strategies, discussed in the context of asthma management, potentially help alleviate dyspnea during pregnancy, considering the link between asthma exacerbations and adverse perinatal outcomes?",
+    "ground_truth": "INSUFFICIENT_CONTEXT",
+    "hop_type": "multi",
+    "source_abstracts": [
+      {
+        "title": "Development and short-term effectiveness of a theory-informed, nurse-led structured rehabilitation consultation in primary care asthma management.",
+        "bm25_score": 13.892
+      },
+      {
+        "title": "Asthma Control During Pregnancy and Adverse Perinatal Outcomes: A Systematic Review.",
+        "bm25_score": 21.972
+      }
+    ]
+  },
+  {
+    "question": "Considering the study on progressive relaxation for individuals with type 2 diabetes and the information on SGLT2i and GLP-1RA therapy, what potential impact could managing fatigue through relaxation techniques have on the risk or progression of diabetic kidney disease?",
+    "ground_truth": "INSUFFICIENT_CONTEXT",
+    "hop_type": "multi",
+    "source_abstracts": [
+      {
+        "title": "The Effect of Progressive Relaxation Exercises Applied to Individuals With Type 2 Diabetes on FATIQUE Level and Sleep Quality: A Randomised Controlled Study.",
+        "bm25_score": 32.476
+      },
+      {
+        "title": "Beyond Monotherapy: The Superior Efficacy of Combined GLP-1 Receptor Agonist and SGLT2 Inhibitors on Renal Biomarkers: A Systematic Review and Meta-Analysis.",
+        "bm25_score": 31.266
+      }
+    ]
+  },
+  {
+    "question": "Considering a study investigating vitamin D receptor polymorphisms and their association with diabetes risk in prediabetic adults, and a separate context highlighting the benefits of combination therapy for diabetic kidney disease in type 2 diabetes patients, what specific renal complications in type 2 diabetes patients could be indirectly impacted by interventions that influence vitamin D levels and diabetes risk?",
+    "ground_truth": "INSUFFICIENT_CONTEXT",
+    "hop_type": "multi",
+    "source_abstracts": [
+      {
+        "title": "Vitamin D Receptor Polymorphisms and the Effect of Vitamin D Supplementation on Diabetes Risk Among Adults With Prediabetes.",
+        "bm25_score": 35.725
+      },
+      {
+        "title": "Beyond Monotherapy: The Superior Efficacy of Combined GLP-1 Receptor Agonist and SGLT2 Inhibitors on Renal Biomarkers: A Systematic Review and Meta-Analysis.",
+        "bm25_score": 24.211
+      }
+    ]
+  },
+  {
+    "question": "What is the evidence regarding the association between smartphone application-based asthma management and the risk of pre-term birth in pregnant individuals?",
+    "ground_truth": "INSUFFICIENT_CONTEXT",
+    "hop_type": "multi",
+    "source_abstracts": [
+      {
+        "title": "Asthma Control During Pregnancy and Adverse Perinatal Outcomes: A Systematic Review.",
+        "bm25_score": 25.961
+      },
+      {
+        "title": "Digital, remotely delivered management interventions for adult asthma: a systematic review and meta-analysis.",
+        "bm25_score": 9.844
+      }
+    ]
+  },
+  {
+    "question": "What are the primary risks and complications associated with the use of cerebral embolic protection devices, beyond the initial concern of embolic debris?",
+    "ground_truth": "INSUFFICIENT_CONTEXT",
+    "hop_type": "aggregative",
+    "source_abstracts": [
+      {
+        "title": "Cerebral Embolic Protection Devices (CEPDs) During Transcatheter Aortic Valve Implantation (TAVI): A Meta-Analysis of Randomized Controlled Trials.",
+        "bm25_score": 43.147
+      },
+      {
+        "title": "Asthma Control During Pregnancy and Adverse Perinatal Outcomes: A Systematic Review.",
+        "bm25_score": 19.905
+      },
+      {
+        "title": "Continuous vs interrupted direct oral anticoagulants for minimal bleeding-risk surgical procedures-a systematic review and meta-analysis.",
+        "bm25_score": 18.925
+      },
+      {
+        "title": "Effects of Garcinia mangostana Peel Extract on Glycemic Control in Type 2 Diabetes Mellitus: A Systematic Review of Human Studies.",
+        "bm25_score": 18.178
+      },
+      {
+        "title": "Are some therapists more effective when they deliver one type of therapy versus another?",
+        "bm25_score": 18.15
+      }
+    ]
+  },
+  {
+    "question": "In the RCT comparing MST with RUL-UB ECT, what cognitive outcome did MST fail to demonstrate a statistically significant improvement on compared to ECT?",
+    "ground_truth": "INSUFFICIENT_CONTEXT",
+    "hop_type": "single",
+    "source_abstracts": [
+      {
+        "title": "Confirmatory efficacy and safety trial of magnetic seizure therapy versus right unilateral ultra-brief electroconvulsive therapy in depression (CREST-MST): a randomised, double-blind, non-inferiority trial in Canada and the USA.",
+        "bm25_score": 40.715
+      }
+    ]
+  },
+  {
+    "question": "Given that intrathecal Pemetrexed chemotherapy causes neurotoxicity as a dose-limiting adverse effect, for what patient profile would escalating Pemetrexed dosing be most problematic?",
+    "ground_truth": "INSUFFICIENT_CONTEXT",
+    "hop_type": "multi",
+    "source_abstracts": [
+      {
+        "title": "[Huangqi Guizhi Wuwu Decoction in the Treatment of Pemetrexed Intrathecal Chemotherapy-induced Neurotoxicity in NSCLC Patients with Leptomeningeal Metastases: A Randomized Controlled Trial].",
+        "bm25_score": 22.577
+      },
+      {
+        "title": "Evaluation of a facilitator training program in a randomized controlled trial of psilocybin treatment for depression.",
+        "bm25_score": 3.666
+      }
+    ]
+  }
+]

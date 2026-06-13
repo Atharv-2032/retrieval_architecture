@@ -13,7 +13,7 @@ def extract_entities_from_docs(docs):
         - treatments
         - drugs
         - risk factors
-        - biomarkers
+        
 
         Return JSON ONLY:
         {{
