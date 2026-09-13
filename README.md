@@ -236,8 +236,10 @@ The 60-question benchmark was generated directly from the Neo4j graph — each q
 
 ## Authors
 
-Atharv Gupta · Ishan Kelkar 
+| Author | Affiliation |
+|---|---|
+| Atharv Gupta | Department of Information Science and Engineering, Ramaiah Institute of Technology, Bengaluru |
+| Ishan Kelkar | Department of Information Science and Engineering, Ramaiah Institute of Technology, Bengaluru |
+| Aditya Kurup | Manipal Institute of Technology |
 
-Department of Information Science and Engineering
-Ramaiah Institute of Technology, Bengaluru
 Mini Project ISP67 — 2025-26
