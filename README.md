@@ -1,5 +1,7 @@
 # HealthRAG
 
+**Live demo:** [aditya-kurup.github.io/healthrag-demo](https://aditya-kurup.github.io/healthrag-demo/)
+
 **A Comparative Study of Vector, Graph, and Hybrid Retrieval-Augmented Generation Architectures for Biomedical Question Answering**
 
 HealthRAG builds three RAG pipelines over the same biomedical corpus and evaluates them head-to-head using RAGAS metrics. The goal is a clean, reproducible comparison — same data, same LLM, different retrieval strategies.
