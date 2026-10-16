@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="HealthRAG live demo: compare vector, graph, and hybrid retrieval for biomedical QA." />
+    <title>HealthRAG | Retrieval lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="HealthRAG home"><span class="brand-mark">H</span><span>Health<span>RAG</span></span></a>
+      <nav aria-label="Primary navigation"><a href="#lab">Live lab</a><a href="#metrics">Evaluation</a><a href="https://github.com/Atharv-2032/retrieval_architecture" target="_blank" rel="noreferrer">Source <span aria-hidden="true">↗</span></a></nav>
+      <span class="status"><i></i> Demo environment</span>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> Biomedical retrieval laboratory</p>
+          <h1>Ask one question.<br /><em>See three retrieval minds.</em></h1>
+          <p class="lede">HealthRAG compares vector, graph, and hybrid retrieval over the same biomedical corpus, so you can see how evidence selection changes an answer.</p>
+          <a class="button button-primary" href="#lab">Open the live lab <span>↓</span></a>
+        </div>
+        <div class="hero-diagram" aria-label="Retrieval architecture overview">
+          <div class="diagram-label">ONE CORPUS · THREE PATHS</div>
+          <div class="diagram-node corpus"><strong>91</strong><span>PubMed papers</span></div>
+          <div class="diagram-line line-a"></div><div class="diagram-line line-b"></div><div class="diagram-line line-c"></div>
+          <div class="diagram-node path vector"><span class="node-icon">◌</span><strong>Vector</strong><small>semantic chunks</small></div>
+          <div class="diagram-node path graph"><span class="node-icon">⌘</span><strong>Graph</strong><small>entity paths</small></div>
+          <div class="diagram-node path hybrid"><span class="node-icon">◈</span><strong>Hybrid</strong><small>merged evidence</small></div>
+          <div class="diagram-foot"><span>666 nodes</span><span>1,286 edges</span><span>60 questions</span></div>
+        </div>
+      </section>
+
+      <section class="lab-section" id="lab">
+        <div class="section-heading"><div><p class="eyebrow"><span></span> Interactive comparison</p><h2>Retrieval lab</h2></div><span class="mono muted">RUN_ID / DEMO-001</span></div>
+        <div class="lab-shell">
+          <aside class="query-rail">
+            <label for="query">Your question</label>
+            <textarea id="query" rows="5">What is a symptom associated with Type 2 diabetes mellitus?</textarea>
+            <button id="run" class="button button-primary run-button"><span class="play">▶</span> Run comparison</button>
+            <div class="rail-divider"></div>
+            <p class="rail-title">Try a benchmark question</p>
+            <button class="preset active">What is a symptom associated with Type 2 diabetes mellitus?</button>
+            <button class="preset">What is the relationship between postpartum depression and breastfeeding?</button>
+            <button class="preset">How does montelukast affect cough variant asthma biomarkers?</button>
+            <p class="demo-note">Demo answers are grounded in the project corpus. Connect the Python pipelines for live model inference.</p>
+          </aside>
+          <div class="results" id="results" aria-live="polite">
+            <div class="results-top"><div><span class="mono muted">QUERY / 001</span><h3 id="query-label">What is a symptom associated with Type 2 diabetes mellitus?</h3></div><span class="latency"><i></i> 3 paths ready</span></div>
+            <div class="answer-grid">
+              <article class="answer-card vector-card"><div class="card-top"><div class="method"><span class="method-icon">◌</span><div><strong>Vector RAG</strong><small>Semantic similarity</small></div></div><span class="score">0.71 <small>precision</small></span></div><p class="answer" data-answer="vector">A symptom associated with Type 2 diabetes mellitus is frequent urination (polyuria), often accompanied by increased thirst and fatigue.</p><div class="evidence"><span>TOP CHUNK</span><span>similarity 0.86</span></div><p class="source">“Common symptoms include polyuria, polydipsia, fatigue, and blurred vision.”</p></article>
+              <article class="answer-card graph-card"><div class="card-top"><div class="method"><span class="method-icon">⌘</span><div><strong>Graph RAG</strong><small>Entity traversal</small></div></div><span class="score">0.61 <small>recall</small></span></div><p class="answer" data-answer="graph">The knowledge graph links Type 2 diabetes mellitus to the symptom <b>hyperglycemia</b>, with polydipsia and polyuria as connected clinical manifestations.</p><div class="evidence"><span>PATH / DISEASE → SYMPTOM</span><span>3 hops</span></div><p class="source">Type 2 diabetes mellitus <b>→ HAS_SYMPTOM →</b> hyperglycemia</p></article>
+              <article class="answer-card hybrid-card"><div class="card-top"><div class="method"><span class="method-icon">◈</span><div><strong>Hybrid RAG</strong><small>Chunks + graph context</small></div></div><span class="score">0.75 <small>recall</small></span></div><p class="answer" data-answer="hybrid">Frequent urination (polyuria) is a symptom of Type 2 diabetes mellitus. It is driven by excess glucose in the blood and commonly appears with increased thirst.</p><div class="evidence"><span>MERGED EVIDENCE</span><span>4 + 4 contexts</span></div><p class="source">Vector chunk confirms the symptom; graph context connects it to hyperglycemia.</p></article>
+            </div>
+            <div class="trace"><div class="trace-head"><span class="mono">RETRIEVAL TRACE</span><span class="mono muted">completed in 2.4s</span></div><div class="trace-steps"><span class="done">01 <b>embed query</b></span><span class="done">02 <b>retrieve context</b></span><span class="done">03 <b>traverse entities</b></span><span class="done">04 <b>generate answer</b></span></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="metrics-section" id="metrics">
+        <div class="section-heading"><div><p class="eyebrow"><span></span> Benchmark snapshot</p><h2>Evidence, measured</h2></div><span class="mono muted">60 QUESTIONS · 3 RUNS</span></div>
+        <div class="metrics-layout"><div class="metric-table"><div class="metric-row metric-header"><span>Architecture</span><span>Faithfulness</span><span>Relevancy</span><span>Context precision</span><span>Context recall</span></div><div class="metric-row"><span><i class="dot vector-dot"></i>Vector RAG</span><strong>0.9158</strong><strong>0.7156</strong><strong>0.7129</strong><strong>0.7922</strong></div><div class="metric-row"><span><i class="dot graph-dot"></i>Graph RAG</span><strong>0.9189</strong><strong>0.6047</strong><strong>0.4573</strong><strong>0.6111</strong></div><div class="metric-row winner"><span><i class="dot hybrid-dot"></i>Hybrid RAG <b>best balance</b></span><strong>0.9031</strong><strong>0.7132</strong><strong>0.6875</strong><strong>0.7455</strong></div></div><div class="callout"><span class="callout-icon">↗</span><p>Hybrid retrieval brings together semantic coverage and explicit biomedical relationships, with four vector and four graph contexts in the final prompt.</p><a href="https://github.com/Atharv-2032/retrieval_architecture#results" target="_blank" rel="noreferrer">Read the methodology <span>↗</span></a></div></div>
+      </section>
+    </main>
+    <footer><span class="brand"><span class="brand-mark">H</span><span>Health<span>RAG</span></span></span><span class="mono muted">A comparative retrieval study for biomedical QA</span><a href="https://github.com/Atharv-2032/retrieval_architecture" target="_blank" rel="noreferrer">GitHub ↗</a></footer>
+    <script src="app.js"></script>
+  </body>
+</html>
